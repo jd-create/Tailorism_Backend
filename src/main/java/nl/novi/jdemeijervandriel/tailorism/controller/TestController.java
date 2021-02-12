@@ -38,4 +38,14 @@ public class TestController {
     public String adminAccess() {
         return testService.generateAdminContent();
     }
+
+    @GetMapping("/customer")
+    public String customerAccess() {
+        return testService.generateCustomerContent();
+    }
+
+    @GetMapping("/tailor")
+    public String tailorAccess() {
+        return testService.generateTailorContent();
+    }
 }

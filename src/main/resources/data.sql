@@ -14,9 +14,19 @@ database te krijgen is via SQL statements in dit bestand.
 INSERT INTO role(name) VALUES('ROLE_USER');
 INSERT INTO role(name) VALUES('ROLE_MODERATOR');
 INSERT INTO role(name) VALUES('ROLE_ADMIN');
+INSERT INTO role(name) VALUES('ROLE_CUSTOMER');
+INSERT INTO role(name) VALUES('ROLE_TAILOR');
 
-INSERT INTO app_user(username,email,password) VALUES ( 'jopie','jopie@mail.nl','$2a$10$44azppeekabMTwZZ1vtq4OWr/SboMJh4KxUOepB8EFkEJH6gbfeQq');
-INSERT INTO app_user(username,email,password) VALUES ( 'sjakie','sjakie@mail.nl','$2a$10$44azppeekabMTwZZ1vtq4OWr/SboMJh4KxUOepB8EFkEJH6gbfeQq');
+INSERT INTO app_user(username,email,password,bank_account, phone_number) VALUES ( 'user','user@mail.nl','$2a$10$44azppeekabMTwZZ1vtq4OWr/SboMJh4KxUOepB8EFkEJH6gbfeQq','BANK123456','061234567');
+INSERT INTO app_user(username,email,password,bank_account, phone_number) VALUES ( 'moderator','mod@mail.nl','$2a$10$44azppeekabMTwZZ1vtq4OWr/SboMJh4KxUOepB8EFkEJH6gbfeQq','BANK123456','061234567');
+INSERT INTO app_user(username,email,password,bank_account, phone_number) VALUES ( 'admin','admin@mail.nl','$2a$10$44azppeekabMTwZZ1vtq4OWr/SboMJh4KxUOepB8EFkEJH6gbfeQq','BANK123456','061234567');
+INSERT INTO app_user(username,email,password,bank_account, phone_number) VALUES ( 'customer','customer@mail.nl','$2a$10$44azppeekabMTwZZ1vtq4OWr/SboMJh4KxUOepB8EFkEJH6gbfeQq','BANK123456','061234567');
+INSERT INTO app_user(username,email,password,bank_account, phone_number) VALUES ( 'tailor','tailor@mail.nl','$2a$10$44azppeekabMTwZZ1vtq4OWr/SboMJh4KxUOepB8EFkEJH6gbfeQq','BANK123456','061234567');
 
-INSERT INTO user_role(user_id, role_id)VALUES ( '1', '3' );
-INSERT INTO user_role(user_id, role_id)VALUES ( '2', '1' );
+INSERT INTO address(street, house_number, postcode, city) VALUES ( 'hoofdstraat', '1', '1234AA', 'hoofdstad' );
+
+INSERT INTO user_role(user_id, role_id)VALUES ( '1', '1' );
+INSERT INTO user_role(user_id, role_id)VALUES ( '2', '2' );
+INSERT INTO user_role(user_id, role_id)VALUES ( '3', '3' );
+INSERT INTO user_role(user_id, role_id)VALUES ( '4', '4' );
+INSERT INTO user_role(user_id, role_id)VALUES ( '5', '5' );

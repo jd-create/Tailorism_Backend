@@ -23,7 +23,7 @@ public class SignupRequest {
     private String password;
 
     @NotBlank
-    @Size(min = 7, max = 12)
+    @Size(min = 7, max = 14)
     private String bankAccount;
 
     @NotBlank

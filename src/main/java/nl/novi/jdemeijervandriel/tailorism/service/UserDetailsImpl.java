@@ -1,6 +1,7 @@
 package nl.novi.jdemeijervandriel.tailorism.service;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import nl.novi.jdemeijervandriel.tailorism.domain.Address;
 import nl.novi.jdemeijervandriel.tailorism.domain.User;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
@@ -12,6 +13,7 @@ import java.util.Objects;
 import java.util.stream.Collectors;
 
 public class UserDetailsImpl implements UserDetails {
+//TODO bankAccount en phoneNumber verplaatsen naar Customer
 
     private static final long serialVersionUID = 1L;
     private final Long id;
@@ -19,6 +21,7 @@ public class UserDetailsImpl implements UserDetails {
     private final String email;
     private final String bankAccount;
     private final String phoneNumber;
+
 
     @JsonIgnore
     private final String password;
@@ -118,4 +121,5 @@ public class UserDetailsImpl implements UserDetails {
     public String getPhoneNumber() {
         return phoneNumber;
     }
+
 }

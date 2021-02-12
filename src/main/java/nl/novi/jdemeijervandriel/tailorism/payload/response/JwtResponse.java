@@ -17,8 +17,8 @@ public class JwtResponse {
         this.id = id;
         this.username = username;
         this.email = email;
-        this.bankAccount = this.bankAccount;
-        this.phoneNumber = this.phoneNumber;
+        this.bankAccount = bankAccount;
+        this.phoneNumber = phoneNumber;
         this.roles = roles;
     }
 

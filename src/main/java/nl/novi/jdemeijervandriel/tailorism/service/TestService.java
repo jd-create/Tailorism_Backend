@@ -10,12 +10,12 @@ public class TestService {
         return "Public Content.";
     }
 
-    @PreAuthorize("hasRole('USER') or hasRole('MODERATOR') or hasRole('ADMIN')")
+    @PreAuthorize("hasRole('USER') or hasRole('MODERATOR') or hasRole('ADMIN') or hasRole('CUSTOMER') or hasRole('TAILOR')")
     public String generateUserContent() {
         return "User Content.";
     }
 
-    @PreAuthorize("hasRole('MODERATOR')")
+    @PreAuthorize("hasRole('MODERATOR') or hasRole('TAILOR')")
     public String generateModContent() {
         return "Moderator Board.";
     }
@@ -23,6 +23,16 @@ public class TestService {
     @PreAuthorize("hasRole('ADMIN')")
     public String generateAdminContent() {
         return "Admin Board.";
+    }
+
+    @PreAuthorize("hasRole('CUSTOMER')")
+    public String generateCustomerContent() {
+        return "Customer Board.";
+    }
+
+    @PreAuthorize("hasRole('TAILOR')")
+    public String generateTailorContent() {
+        return "Tailor Board.";
     }
 
 }
