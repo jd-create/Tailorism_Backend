@@ -25,8 +25,7 @@ public class User {
     private String username;
     private String email;
     private String password;
-    private String bankAccount;
-    private String phoneNumber;
+
 
     @ManyToMany
     @JoinTable (name = "user_role",
@@ -38,12 +37,11 @@ public class User {
 
     }
 
-    public User(String username, String email, String password, String bankAccount, String phoneNumber) {
+    public User(String username, String email, String password) {
         this.username = username;
         this.email = email;
         this.password = password;
-        this.bankAccount = bankAccount;
-        this.phoneNumber = phoneNumber;
+
     }
 
     public long getId() {
@@ -84,21 +82,5 @@ public class User {
 
     public void setRoles(Set<Role> roles) {
         this.roles = roles;
-    }
-
-    public String getBankAccount() {
-        return bankAccount;
-    }
-
-    public void setBankAccount(String bank_Account) {
-        this.bankAccount = bankAccount;
-    }
-
-    public String getPhoneNumber() {
-        return phoneNumber;
-    }
-
-    public void setPhoneNumber(String phone_Number) {
-        this.phoneNumber = phoneNumber;
     }
 }

@@ -1,6 +1,6 @@
 package nl.novi.jdemeijervandriel.tailorism.payload.request;
 
-public class RegisterCustomerRequest {
+public class RegisterUserRequest {
 
     private String firstName;
     private String lastName;
@@ -8,6 +8,8 @@ public class RegisterCustomerRequest {
     private String houseNumber;
     private String postcode;
     private String city;
+    private String phoneNumber;
+    private String bankAccount;
 
     public String getFirstName() {
         return firstName;
@@ -55,5 +57,21 @@ public class RegisterCustomerRequest {
 
     public void setCity(String city) {
         this.city = city;
+    }
+
+    public String getPhoneNumber() {
+        return phoneNumber;
+    }
+
+    public void setPhoneNumber(String phoneNumber) {
+        this.phoneNumber = phoneNumber;
+    }
+
+    public String getBankAccount() {
+        return bankAccount;
+    }
+
+    public void setBankAccount(String bankAccount) {
+        this.bankAccount = bankAccount;
     }
 }

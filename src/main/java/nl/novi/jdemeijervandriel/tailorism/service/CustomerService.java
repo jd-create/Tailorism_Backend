@@ -5,13 +5,12 @@ import nl.novi.jdemeijervandriel.tailorism.domain.Customer;
 import nl.novi.jdemeijervandriel.tailorism.domain.CustomerBuilder;
 import nl.novi.jdemeijervandriel.tailorism.exception.DatabaseErrorException;
 import nl.novi.jdemeijervandriel.tailorism.exception.RecordNotFoundException;
-import nl.novi.jdemeijervandriel.tailorism.payload.request.RegisterCustomerRequest;
+import nl.novi.jdemeijervandriel.tailorism.payload.request.RegisterUserRequest;
 import nl.novi.jdemeijervandriel.tailorism.repository.AddressRepository;
 import nl.novi.jdemeijervandriel.tailorism.repository.CustomerRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import javax.naming.NameNotFoundException;
 import java.util.List;
 
 @Service
@@ -48,9 +47,9 @@ public class CustomerService {
         }
     }
 
-    public long saveCustomer (RegisterCustomerRequest registerCustomerRequest){
-        Customer customer = new CustomerBuilder(registerCustomerRequest).buildCustomer();
-        Address address = new CustomerBuilder (registerCustomerRequest)
+    public long saveCustomer (RegisterUserRequest registerUserRequest){
+        Customer customer = new CustomerBuilder(registerUserRequest).buildCustomer();
+        Address address = new CustomerBuilder (registerUserRequest)
                 .buildAddress();
 
         Address savedAddress = addressRepository.save(address);

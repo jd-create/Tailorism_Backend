@@ -22,14 +22,6 @@ public class SignupRequest {
     @Size(min = 6, max = 40)
     private String password;
 
-    @NotBlank
-    @Size(min = 7, max = 14)
-    private String bankAccount;
-
-    @NotBlank
-    @Size(min = 10, max = 10)
-    private String phoneNumber;
-
     public String getUsername() {
         return username;
     }
@@ -60,21 +52,5 @@ public class SignupRequest {
 
     public void setRole(Set<String> role) {
         this.role = role;
-    }
-
-    public String getBankAccount() {
-        return bankAccount;
-    }
-
-    public void setBankAccount(String bankAccount) {
-        this.bankAccount = bankAccount;
-    }
-
-    public String getPhoneNumber() {
-        return phoneNumber;
-    }
-
-    public void setPhoneNumber(String phoneNumber) {
-        this.phoneNumber = phoneNumber;
     }
 }

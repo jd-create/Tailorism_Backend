@@ -1,6 +1,6 @@
 package nl.novi.jdemeijervandriel.tailorism.domain;
 
-import nl.novi.jdemeijervandriel.tailorism.payload.request.RegisterCustomerRequest;
+import nl.novi.jdemeijervandriel.tailorism.payload.request.RegisterUserRequest;
 
 public class CustomerBuilder {
 
@@ -11,13 +11,13 @@ public class CustomerBuilder {
     private String postcode;
     private String city;
 
-    public CustomerBuilder(RegisterCustomerRequest registerCustomerRequest){
-        this.firstName = registerCustomerRequest.getFirstName();
-        this.lastName = registerCustomerRequest.getLastName();
-        this.street = registerCustomerRequest.getStreet();
-        this.houseNumber = registerCustomerRequest.getHouseNumber();
-        this.postcode = registerCustomerRequest.getPostcode();
-        this.city = registerCustomerRequest.getCity();
+    public CustomerBuilder(RegisterUserRequest registerUserRequest){
+        this.firstName = registerUserRequest.getFirstName();
+        this.lastName = registerUserRequest.getLastName();
+        this.street = registerUserRequest.getStreet();
+        this.houseNumber = registerUserRequest.getHouseNumber();
+        this.postcode = registerUserRequest.getPostcode();
+        this.city = registerUserRequest.getCity();
     }
 
     public Customer buildCustomer(){

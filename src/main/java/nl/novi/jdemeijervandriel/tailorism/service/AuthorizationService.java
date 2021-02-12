@@ -89,8 +89,7 @@ public class AuthorizationService {
         // Create new user's account
         User user = new User(signUpRequest.getUsername(),
                 signUpRequest.getEmail(),
-                encoder.encode(signUpRequest.getPassword()),
-                signUpRequest.getBankAccount(),signUpRequest.getPhoneNumber());
+                encoder.encode(signUpRequest.getPassword()));
 
 
         Set<String> strRoles = signUpRequest.getRole();
@@ -115,6 +114,15 @@ public class AuthorizationService {
                         roles.add(modRole);
 
                         break;
+                    case "customer":
+                        Role customerRole = roleRepository.findByName(ERole.ROLE_CUSTOMER)
+                                .orElseThrow(() -> new RuntimeException(ROLE_NOT_FOUND_ERROR));
+                        roles.add(customerRole);
+                        break;
+                    case "tailor":
+                        Role tailorRole = roleRepository.findByName(ERole.ROLE_TAILOR)
+                                .orElseThrow(() -> new RuntimeException(ROLE_NOT_FOUND_ERROR));
+                        roles.add(tailorRole);
                     default:
                         Role userRole = roleRepository.findByName(ERole.ROLE_USER)
                                 .orElseThrow(() -> new RuntimeException(ROLE_NOT_FOUND_ERROR));
@@ -159,8 +167,6 @@ public class AuthorizationService {
                 userDetails.getId(),
                 userDetails.getUsername(),
                 userDetails.getEmail(),
-                userDetails.getBankAccount(),
-                userDetails.getPhoneNumber(),
                 roles));
     }
 

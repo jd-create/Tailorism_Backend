@@ -17,11 +17,11 @@ INSERT INTO role(name) VALUES('ROLE_ADMIN');
 INSERT INTO role(name) VALUES('ROLE_CUSTOMER');
 INSERT INTO role(name) VALUES('ROLE_TAILOR');
 
-INSERT INTO app_user(username,email,password,bank_account, phone_number) VALUES ( 'user','user@mail.nl','$2a$10$44azppeekabMTwZZ1vtq4OWr/SboMJh4KxUOepB8EFkEJH6gbfeQq','BANK123456','061234567');
-INSERT INTO app_user(username,email,password,bank_account, phone_number) VALUES ( 'moderator','mod@mail.nl','$2a$10$44azppeekabMTwZZ1vtq4OWr/SboMJh4KxUOepB8EFkEJH6gbfeQq','BANK123456','061234567');
-INSERT INTO app_user(username,email,password,bank_account, phone_number) VALUES ( 'admin','admin@mail.nl','$2a$10$44azppeekabMTwZZ1vtq4OWr/SboMJh4KxUOepB8EFkEJH6gbfeQq','BANK123456','061234567');
-INSERT INTO app_user(username,email,password,bank_account, phone_number) VALUES ( 'customer','customer@mail.nl','$2a$10$44azppeekabMTwZZ1vtq4OWr/SboMJh4KxUOepB8EFkEJH6gbfeQq','BANK123456','061234567');
-INSERT INTO app_user(username,email,password,bank_account, phone_number) VALUES ( 'tailor','tailor@mail.nl','$2a$10$44azppeekabMTwZZ1vtq4OWr/SboMJh4KxUOepB8EFkEJH6gbfeQq','BANK123456','061234567');
+INSERT INTO app_user(username,email,password) VALUES ( 'user','user@mail.nl','$2a$10$44azppeekabMTwZZ1vtq4OWr/SboMJh4KxUOepB8EFkEJH6gbfeQq');
+INSERT INTO app_user(username,email,password) VALUES ( 'moderator','mod@mail.nl','$2a$10$44azppeekabMTwZZ1vtq4OWr/SboMJh4KxUOepB8EFkEJH6gbfeQq');
+INSERT INTO app_user(username,email,password) VALUES ( 'admin','admin@mail.nl','$2a$10$44azppeekabMTwZZ1vtq4OWr/SboMJh4KxUOepB8EFkEJH6gbfeQq');
+INSERT INTO app_user(username,email,password) VALUES ( 'customer','customer@mail.nl','$2a$10$44azppeekabMTwZZ1vtq4OWr/SboMJh4KxUOepB8EFkEJH6gbfeQq');
+INSERT INTO app_user(username,email,password) VALUES ( 'tailor','tailor@mail.nl','$2a$10$44azppeekabMTwZZ1vtq4OWr/SboMJh4KxUOepB8EFkEJH6gbfeQq');
 
 INSERT INTO address(street, house_number, postcode, city) VALUES ( 'hoofdstraat', '1', '1234AA', 'hoofdstad' );
 

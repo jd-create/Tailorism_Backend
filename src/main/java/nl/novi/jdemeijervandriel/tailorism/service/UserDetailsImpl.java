@@ -19,8 +19,7 @@ public class UserDetailsImpl implements UserDetails {
     private final Long id;
     private final String username;
     private final String email;
-    private final String bankAccount;
-    private final String phoneNumber;
+
 
 
     @JsonIgnore
@@ -28,14 +27,12 @@ public class UserDetailsImpl implements UserDetails {
 
     private final Collection<? extends GrantedAuthority> authorities;
 
-    public UserDetailsImpl(Long id, String username, String email, String password, String bankAccount, String phoneNumber,
+    public UserDetailsImpl(Long id, String username, String email, String password,
                            Collection<? extends GrantedAuthority> authorities) {
         this.id = id;
         this.username = username;
         this.email = email;
         this.password = password;
-        this.bankAccount = bankAccount;
-        this.phoneNumber = phoneNumber;
         this.authorities = authorities;
 
 
@@ -51,8 +48,6 @@ public class UserDetailsImpl implements UserDetails {
                 user.getUsername(),
                 user.getEmail(),
                 user.getPassword(),
-                user.getBankAccount(),
-                user.getPhoneNumber(),
                 authorities);
     }
 
@@ -113,13 +108,4 @@ public class UserDetailsImpl implements UserDetails {
     public int hashCode() {
         return Objects.hash(id, username, email, password, authorities);
     }
-
-    public String getBankAccount() {
-        return bankAccount;
-    }
-
-    public String getPhoneNumber() {
-        return phoneNumber;
-    }
-
 }
