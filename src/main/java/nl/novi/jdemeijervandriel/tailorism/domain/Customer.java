@@ -22,14 +22,22 @@ public class Customer {
     @Column(name = "last_name")
     private String lastName;
 
+    @Column(name = "telephone_number")
+    private String telephoneNumber;
+
+    @Column(name = "bank_account")
+    private String bankAccount;
+
     @OneToOne(fetch = FetchType.LAZY,mappedBy = "customer")
     private Address address;
 
     public Customer(){}
 
-    public Customer(String firstName, String lastName){
+    public Customer(String firstName, String lastName, String telephoneNumber, String bankAccount){
         this.firstName = firstName;
         this.lastName = lastName;
+        this.telephoneNumber = telephoneNumber;
+        this.bankAccount = bankAccount;
     }
 
 
@@ -62,5 +70,21 @@ public class Customer {
     }
 
     public void setAddress(Address savedAddress) {
+    }
+
+    public String getTelephoneNumber() {
+        return telephoneNumber;
+    }
+
+    public void setTelephoneNumber(String telephoneNumber) {
+        this.telephoneNumber = telephoneNumber;
+    }
+
+    public String getBankAccount() {
+        return bankAccount;
+    }
+
+    public void setBankAccount(String bankAccount) {
+        this.bankAccount = bankAccount;
     }
 }
