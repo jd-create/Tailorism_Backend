@@ -41,7 +41,7 @@ public class CustomerController {
         return new ResponseEntity<>("Client with ID " + id + "deleted.", HttpStatus.NO_CONTENT);
     }
 
-    @PutMapping(value = "/customers/{id}")
+    @PutMapping(value = "/customer/{id}")
     public ResponseEntity<Object> updateCustomer(@PathVariable("id") long id, @RequestBody Customer customer){
         customerService.updateCustomer(id, customer);
         return new ResponseEntity<>(customer, HttpStatus.OK);

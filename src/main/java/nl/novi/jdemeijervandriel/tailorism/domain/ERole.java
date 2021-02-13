@@ -11,5 +11,6 @@ public enum ERole {
     ROLE_MODERATOR,
     ROLE_ADMIN,
     ROLE_CUSTOMER,
-    ROLE_TAILOR
+    ROLE_TAILOR,
+    ROLE_OPERATOR
 }

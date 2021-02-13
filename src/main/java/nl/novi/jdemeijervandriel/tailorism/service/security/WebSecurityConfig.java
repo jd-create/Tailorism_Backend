@@ -68,7 +68,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 .antMatchers("/api/test/mod").hasRole("MODERATOR")
                 .antMatchers("/api/test/user").hasRole("USER")
                 .antMatchers("/api/test/admin").hasRole("ADMIN")
-                .antMatchers("/api/customer/list").hasRole("ADMIN")
+                .antMatchers("/api/customer/**").hasRole("ADMIN")
                 //TODO een customer role kan deze regel hierboven nu ook, uitzoeken en fixen
                 .antMatchers("/api/customer/register").hasRole("CUSTOMER")
                 .anyRequest().authenticated();

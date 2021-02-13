@@ -123,6 +123,11 @@ public class AuthorizationService {
                         Role tailorRole = roleRepository.findByName(ERole.ROLE_TAILOR)
                                 .orElseThrow(() -> new RuntimeException(ROLE_NOT_FOUND_ERROR));
                         roles.add(tailorRole);
+                        break;
+                    case "operator":
+                        Role operatorRole = roleRepository.findByName(ERole.ROLE_OPERATOR)
+                                .orElseThrow(() -> new RuntimeException(ROLE_NOT_FOUND_ERROR));
+                        roles.add(operatorRole);
                     default:
                         Role userRole = roleRepository.findByName(ERole.ROLE_USER)
                                 .orElseThrow(() -> new RuntimeException(ROLE_NOT_FOUND_ERROR));
