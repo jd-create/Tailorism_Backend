@@ -9,8 +9,8 @@ public class TestService {
     public String generatePublicContent() {
         return "Public Content.";
     }
-
-    @PreAuthorize("hasRole('USER') or hasRole('MODERATOR') or hasRole('ADMIN') or hasRole('CUSTOMER') or hasRole('TAILOR')")
+/* volgende verwijderd in onderstaande regel vóór ") or hasRole('MODERATOR') or hasRole('ADMIN') or hasRole('CUSTOMER') or hasRole('TAILOR')*/
+    @PreAuthorize("hasRole('USER') ")
     public String generateUserContent() {
         return "User Content.";
     }

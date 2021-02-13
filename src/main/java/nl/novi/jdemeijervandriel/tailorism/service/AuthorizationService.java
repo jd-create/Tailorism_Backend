@@ -168,6 +168,7 @@ public class AuthorizationService {
                 userDetails.getUsername(),
                 userDetails.getEmail(),
                 roles));
+
     }
 
 }

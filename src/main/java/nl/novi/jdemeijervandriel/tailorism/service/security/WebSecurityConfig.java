@@ -64,7 +64,10 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 .exceptionHandling().authenticationEntryPoint(unauthorizedHandler).and()
                 .sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS).and()
                 .authorizeRequests().antMatchers("/api/auth/**").permitAll()
-                .antMatchers("/api/test/**").permitAll()
+                .antMatchers("/api/test/all").permitAll()
+                .antMatchers("/api/test/mod").hasRole("MODERATOR")
+                .antMatchers("/api/test/user").hasRole("USER")
+                .antMatchers("/api/test/admin").hasRole("ADMIN")
                 .antMatchers("api/customer/**").hasRole("ADMIN")
                 .anyRequest().authenticated();
 //TODO aanvullen voor rollen customer en tailor
