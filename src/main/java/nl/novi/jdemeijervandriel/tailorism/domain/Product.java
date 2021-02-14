@@ -4,6 +4,8 @@ import javax.persistence.*;
 import java.math.BigDecimal;
 
 @Entity
+@Inheritance(strategy = InheritanceType.SINGLE_TABLE)
+@DiscriminatorColumn(name = "product_type",discriminatorType = DiscriminatorType.INTEGER)
 @Table(name = "product")
 public class Product {
 
@@ -11,10 +13,10 @@ public class Product {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
 
     @Column(columnDefinition = "serial")
-    private long id;
-    private String name;
-    private String description;
-    private BigDecimal price;
+    protected long id;
+    protected String name;
+    protected String description;
+    protected BigDecimal price;
 
     public Product(){}
 
