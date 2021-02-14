@@ -9,15 +9,15 @@ import java.util.Date;
 @DiscriminatorValue("1")
 public class Article extends Product{
 
-    private Date availability;
+    private Boolean isAvailable;
     private String storageLocation;
 
     public Article(){
 
     }
 //
-    public Article(Date availability, String storageLocation, String name, String description, BigDecimal price){
-        this.availability = availability;
+    public Article(Boolean isAvailable, String storageLocation, String name, String description, BigDecimal price){
+        this.isAvailable = isAvailable;
         this.storageLocation = storageLocation;
         super.name = name;
         super.description = description;
@@ -25,13 +25,7 @@ public class Article extends Product{
     }
 
 
-    public Date getAvailability() {
-        return availability;
-    }
 
-    public void setAvailability(Date availability) {
-        this.availability = availability;
-    }
 
     public String getStorageLocation() {
         return storageLocation;
@@ -39,5 +33,13 @@ public class Article extends Product{
 
     public void setStorageLocation(String storageLocation) {
         this.storageLocation = storageLocation;
+    }
+
+    public Boolean getAvailable() {
+        return isAvailable;
+    }
+
+    public void setAvailable(Boolean available) {
+        isAvailable = available;
     }
 }

@@ -32,3 +32,5 @@ INSERT INTO user_role(user_id, role_id)VALUES ( '2', '2' );
 INSERT INTO user_role(user_id, role_id)VALUES ( '3', '3' );
 INSERT INTO user_role(user_id, role_id)VALUES ( '4', '4' );
 INSERT INTO user_role(user_id, role_id)VALUES ( '5', '5' );
+
+INSERT INTO product(product_type,description, name, price, is_available, storage_location, end_time, start_time)VALUES ( '1', 'Gütermann naaigaren 1000 meter wit' , 'naaigaren1000w', '9.60', TRUE, 'A-720-SL', null, null)

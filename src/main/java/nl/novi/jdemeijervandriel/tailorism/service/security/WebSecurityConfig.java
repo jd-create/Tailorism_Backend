@@ -69,10 +69,10 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 .antMatchers("/api/test/user").hasRole("USER")
                 .antMatchers("/api/test/admin").hasRole("ADMIN")
                 .antMatchers("/api/customer/**").hasRole("ADMIN")
-                //TODO een customer role kan deze regel hierboven nu ook, uitzoeken en fixen
                 .antMatchers("/api/customer/register").hasRole("CUSTOMER")
+                .antMatchers("/api/product/list").hasRole("ADMIN")
                 .anyRequest().authenticated();
-//TODO aanvullen voor rollen customer en tailor
+
         http.addFilterBefore(authenticationJwtTokenFilter(), UsernamePasswordAuthenticationFilter.class);
     }
 }
