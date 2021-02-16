@@ -15,6 +15,10 @@ public class Order {
     private long id;
     private String timeOfOrder;
 
+    @ManyToOne
+    @JoinColumn(name = "customer_id")
+    private Customer customer;
+
     public Order(){}
 
     public Order(String timeOfOrder){
@@ -36,5 +40,13 @@ public class Order {
 
     public void setId(long id) {
         this.id = id;
+    }
+
+    public Customer getCustomer() {
+        return customer;
+    }
+
+    public void setCustomer(Customer customer) {
+        this.customer = customer;
     }
 }

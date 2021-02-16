@@ -5,6 +5,7 @@ import com.sun.istack.NotNull;
 
 
 import javax.persistence.*;
+import java.util.Set;
 
 @Entity
 @Table(name = "customer")
@@ -12,7 +13,7 @@ import javax.persistence.*;
 public class Customer {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long id;
+    private long customer_id;
 
     @NotNull
     @Column(name = "first_name")
@@ -31,6 +32,15 @@ public class Customer {
     @OneToOne(fetch = FetchType.LAZY,mappedBy = "customer")
     private Address address;
 
+    @OneToMany(fetch = FetchType.LAZY,
+            mappedBy = "customer",
+            cascade = CascadeType.ALL,
+            orphanRemoval = true)
+
+    private Set<Order> orders;
+
+
+
     public Customer(){}
 
     public Customer(String firstName, String lastName, String telephoneNumber, String bankAccount){
@@ -40,13 +50,18 @@ public class Customer {
         this.bankAccount = bankAccount;
     }
 
+    public void setOrders(Set<Order> orders){this.orders = orders;}
+
+    public Set<Order> getOrders() {
+        return orders;
+    }
 
     public long getId() {
-        return id;
+        return customer_id;
     }
 
     public void setId(long id) {
-        this.id = id;
+        this.customer_id = id;
     }
 
     public String getFirstName() {

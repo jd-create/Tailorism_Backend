@@ -23,9 +23,14 @@ public class CustomerController {
         return new ResponseEntity<>(customers, HttpStatus.OK);
     }
 
-    @GetMapping(value = "/{id}")
+    @GetMapping(value = "/id/{id}")
     public ResponseEntity<Object> getCustomer(@PathVariable("id") long id){
         Customer customer = customerService.getCustomerById(id);
+        return new ResponseEntity<>(customer, HttpStatus.OK);
+    }
+    @GetMapping(value = "/lastname/{lastname}")
+    public ResponseEntity<Object> getCustomerByLastName(@PathVariable("lastname") String lastname){
+        Customer customer = customerService.getCustomerByLastName(lastname);
         return new ResponseEntity<>(customer, HttpStatus.OK);
     }
 
@@ -35,13 +40,13 @@ public class CustomerController {
         return new ResponseEntity<>(newId, HttpStatus.CREATED);
     }
 
-    @DeleteMapping(value = "/{id}")
+    @DeleteMapping(value = "/id/{id}")
     public ResponseEntity<Object> deleteCustomer(@PathVariable("id") long id){
         customerService.deleteCustomer(id);
         return new ResponseEntity<>("Client with ID " + id + "deleted.", HttpStatus.NO_CONTENT);
     }
 
-    @PutMapping(value = "/customer/{id}")
+    @PutMapping(value = "/id/{id}")
     public ResponseEntity<Object> updateCustomer(@PathVariable("id") long id, @RequestBody Customer customer){
         customerService.updateCustomer(id, customer);
         return new ResponseEntity<>(customer, HttpStatus.OK);
