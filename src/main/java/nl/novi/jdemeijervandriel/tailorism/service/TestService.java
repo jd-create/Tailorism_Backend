@@ -15,11 +15,6 @@ public class TestService {
         return "User Content.";
     }
 
-    @PreAuthorize("hasRole('MODERATOR') or hasRole('TAILOR')")
-    public String generateModContent() {
-        return "Moderator Board.";
-    }
-
     @PreAuthorize("hasRole('ADMIN')")
     public String generateAdminContent() {
         return "Admin Board.";
@@ -35,4 +30,9 @@ public class TestService {
         return "Tailor Board.";
     }
 
+    @PreAuthorize("hasRole('OPERATOR')")
+    public String generateOperatorContent() {
+        return "Operator Board.";
+    }
 }
+//TODO toewijzingen in WebSecurityConfig naar hier verplaatsen en class hernoemen
