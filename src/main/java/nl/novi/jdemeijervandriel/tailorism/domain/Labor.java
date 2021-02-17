@@ -8,31 +8,32 @@ import java.util.Date;
 @DiscriminatorValue("2")
 public class Labor extends Product{
 
-    private Date startTime;
-    private Date endTime;
+    private String startTime;
+    private String endTime;
 
     public Labor(){}
 
-    public Labor(Date startTime, String name, String description){
+    public Labor(String startTime, String name, String description){
         this.startTime = startTime;
         super.name = name;
         super.description = description;
 
     }
 
-    public Date getStartTime() {
+
+    public String getStartTime() {
         return startTime;
     }
 
-    public void setStartTime(Date startTime) {
+    public void setStartTime(String startTime) {
         this.startTime = startTime;
     }
 
-    public Date getEndTime() {
+    public String getEndTime() {
         return endTime;
     }
 
-    public void setEndTime(Date endTime) {
+    public void setEndTime(String endTime) {
         this.endTime = endTime;
     }
 }
