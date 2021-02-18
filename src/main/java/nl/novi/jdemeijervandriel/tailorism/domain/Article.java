@@ -9,19 +9,18 @@ import java.util.Date;
 @DiscriminatorValue("1")
 public class Article extends Product{
 
-    private Boolean isAvailable;
     private String storageLocation;
 
     public Article(){
 
     }
 //
-    public Article(Boolean isAvailable, String storageLocation, String name, String description, BigDecimal price){
-        this.isAvailable = isAvailable;
+    public Article(String storageLocation, String productName, String description, BigDecimal price, Status status){
         this.storageLocation = storageLocation;
-        super.name = name;
+        super.productName = productName;
         super.description = description;
         super.price = price;
+        super.status = status;
     }
 
 
@@ -35,11 +34,4 @@ public class Article extends Product{
         this.storageLocation = storageLocation;
     }
 
-    public Boolean getAvailable() {
-        return isAvailable;
-    }
-
-    public void setAvailable(Boolean available) {
-        isAvailable = available;
-    }
 }

@@ -11,13 +11,14 @@ public class Labor extends Product{
     private String startTime;
     private String endTime;
 
+
     public Labor(){}
 
-    public Labor(String startTime, String name, String description){
+    public Labor(String startTime, String productName, String description, Status status){
         this.startTime = startTime;
-        super.name = name;
+        super.productName = productName;
         super.description = description;
-
+        super.status = status;
     }
 
 

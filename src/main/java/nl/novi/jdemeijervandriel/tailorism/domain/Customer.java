@@ -29,6 +29,7 @@ public class Customer {
     @Column(name = "bank_account")
     private String bankAccount;
 
+
     @OneToOne(fetch = FetchType.LAZY,mappedBy = "customer")
     private Address address;
 
@@ -36,7 +37,6 @@ public class Customer {
             mappedBy = "customer",
             cascade = CascadeType.ALL,
             orphanRemoval = true)
-
     private Set<Order> orders;
 
 

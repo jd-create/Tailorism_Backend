@@ -3,6 +3,8 @@ package nl.novi.jdemeijervandriel.tailorism.domain;
 import javax.persistence.*;
 import java.math.BigDecimal;
 
+//Article and Labor inherite from Product. Strategy is SINGLE_TABLE. Product_type distinguish the two.
+
 @Entity
 @Inheritance(strategy = InheritanceType.SINGLE_TABLE)
 @DiscriminatorColumn(name = "product_type",discriminatorType = DiscriminatorType.INTEGER)
@@ -14,16 +16,23 @@ public class Product {
 
     @Column(columnDefinition = "serial")
     protected long id;
-    protected String name;
+    @Column(name = "product_name")
+    protected String productName;
     protected String description;
     protected BigDecimal price;
 
+    @ManyToOne
+    @JoinColumn(name = "status")
+    protected Status status;
+
+
     public Product(){}
 
-    public Product(String name, String description, BigDecimal price){
-        this.name = name;
+    public Product(String productName, String description, BigDecimal price, Status status){
+        this.productName = productName;
         this.description = description;
         this.price = price;
+        this.status = status;
     }
 
 
@@ -33,14 +42,6 @@ public class Product {
 
     public void setId(long id) {
         this.id = id;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
     }
 
     public String getDescription() {
@@ -58,4 +59,14 @@ public class Product {
     public void setPrice(BigDecimal price) {
         this.price = price;
     }
+/*
+    public Status getStatus() {
+        return status;
+    }
+
+    public void setStatus(Status status) {
+        this.status = status;
+    }
+    */
+
 }

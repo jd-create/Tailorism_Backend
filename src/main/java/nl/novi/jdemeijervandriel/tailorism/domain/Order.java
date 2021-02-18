@@ -17,6 +17,7 @@ public class Order {
     @Column
     private String timeOfOrder;
 
+
     @ManyToMany
     @JoinTable(name = "order_product",
     joinColumns = @JoinColumn(name = "order_id"),
@@ -27,11 +28,11 @@ public class Order {
     @JoinColumn(name = "customer_id")
     private Customer customer;
 
+
     public Order(){}
 
     public Order(String timeOfOrder){
         this.timeOfOrder = timeOfOrder;
-
     }
 
     public String getTimeOfOrder() {
@@ -50,15 +51,7 @@ public class Order {
         this.id = id;
     }
 
-    public Customer getCustomer() {
-        return customer;
-    }
-
-    public void setCustomer(Customer customer) {
-        this.customer = customer;
-    }
-
-   public Set<Product> getProductSet() {
+    public Set<Product> getProductSet() {
         return productSet;
     }
 
