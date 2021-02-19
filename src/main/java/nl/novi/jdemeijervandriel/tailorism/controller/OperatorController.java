@@ -1,9 +1,11 @@
 package nl.novi.jdemeijervandriel.tailorism.controller;
 
 import nl.novi.jdemeijervandriel.tailorism.domain.Customer;
+import nl.novi.jdemeijervandriel.tailorism.domain.Order;
 import nl.novi.jdemeijervandriel.tailorism.repository.CustomerRepository;
 import nl.novi.jdemeijervandriel.tailorism.repository.RoleRepository;
 import nl.novi.jdemeijervandriel.tailorism.service.CustomerService;
+import nl.novi.jdemeijervandriel.tailorism.service.OrderService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -23,6 +25,9 @@ public class OperatorController {
 
     @Autowired
     private CustomerService customerService;
+
+    @Autowired
+    private OrderService orderService;
 
 
     @Autowired
@@ -46,4 +51,9 @@ public class OperatorController {
         return new ResponseEntity<>(customer, HttpStatus.OK);
     }
 
+    @GetMapping(value = "/order/list")
+    public ResponseEntity<Object> getAllOrders(){
+        List<Order> orderList = orderService.getAllOrders();
+        return new ResponseEntity<>(orderList, HttpStatus.OK);
+    }
 }
