@@ -1,20 +1,17 @@
 package nl.novi.jdemeijervandriel.tailorism.controller;
 
-import nl.novi.jdemeijervandriel.tailorism.domain.Customer;
-import nl.novi.jdemeijervandriel.tailorism.domain.Order;
-import nl.novi.jdemeijervandriel.tailorism.domain.Product;
+import nl.novi.jdemeijervandriel.tailorism.domain.*;
+import nl.novi.jdemeijervandriel.tailorism.payload.request.AddressRequest;
+import nl.novi.jdemeijervandriel.tailorism.payload.request.RoleRequest;
+import nl.novi.jdemeijervandriel.tailorism.repository.AddressRepository;
 import nl.novi.jdemeijervandriel.tailorism.repository.CustomerRepository;
 import nl.novi.jdemeijervandriel.tailorism.repository.RoleRepository;
-import nl.novi.jdemeijervandriel.tailorism.service.CustomerService;
-import nl.novi.jdemeijervandriel.tailorism.service.OrderService;
-import nl.novi.jdemeijervandriel.tailorism.service.ProductService;
+import nl.novi.jdemeijervandriel.tailorism.repository.UserRepository;
+import nl.novi.jdemeijervandriel.tailorism.service.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -36,6 +33,15 @@ public class OperatorController {
 
     @Autowired
     private RoleRepository roleRepository;
+
+    @Autowired
+    private UserRepository userRepository;
+
+    @Autowired
+    private AddressRepository addressRepository;
+
+    @Autowired
+    private UserDetailsServiceImpl userDetailsService;
 
     @GetMapping(value = "/customer/list")
     public ResponseEntity<Object> getCustomers(){
@@ -67,5 +73,18 @@ public class OperatorController {
         return new ResponseEntity<>(products,HttpStatus.OK);
         }
 
+    /*@GetMapping(value = "/user/{email}/{username}/list")
+    public ResponseEntity<Object> findByUsernameAndRoles(@RequestBody RoleRequest roleRequest){
+        List<User> userWithRoleCustomer = userRepository.findByUsernameAndRoles(roleRequest.getUsername(),role);
+            return new ResponseEntity<>(userWithRoleCustomer,HttpStatus.OK);
+        }
+    }
+    */
+
+    @GetMapping("/addressbystreetandhousenumber/list")
+    public ResponseEntity<Object> findByStreetAndAndHouseNumber(@RequestBody AddressRequest addressRequest){
+        List<Address> addressList = addressRepository.findByStreetAndAndHouseNumber(addressRequest.getStreet(),addressRequest.getHouseNumber());
+        return new ResponseEntity<>(addressList,HttpStatus.OK);
+    }
 
 }
