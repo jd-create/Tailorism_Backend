@@ -59,7 +59,7 @@ public class Product {
     public void setPrice(BigDecimal price) {
         this.price = price;
     }
-/*
+
     public Status getStatus() {
         return status;
     }
@@ -67,6 +67,6 @@ public class Product {
     public void setStatus(Status status) {
         this.status = status;
     }
-    */
+
 
 }

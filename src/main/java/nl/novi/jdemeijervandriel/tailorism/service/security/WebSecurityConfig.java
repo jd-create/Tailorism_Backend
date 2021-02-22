@@ -69,7 +69,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 .antMatchers("/api/test/admin").hasRole("ADMIN")
                 .antMatchers("/api/customer/**").hasRole("OPERATOR")
                 .antMatchers("/api/customer/register").hasRole("CUSTOMER")
-                .antMatchers("/api/product/list").hasRole("OPERATOR")
+                .antMatchers("/api/product/**").hasRole("OPERATOR")
                 .antMatchers("/api/order/list").hasRole("OPERATOR")
                 .antMatchers("api/operator/**").hasRole("OPERATOR")
                 .anyRequest().authenticated();
