@@ -8,12 +8,10 @@ import javax.persistence.*;
 import java.util.Set;
 
 @Entity
-@Table(name = "customer")
-
 public class Customer {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long customer_id;
+    private long id;
 
     @NotNull
     @Column(name = "first_name")
@@ -29,6 +27,8 @@ public class Customer {
     @Column(name = "bank_account")
     private String bankAccount;
 
+    @OneToOne(mappedBy = "customer")
+    private File file;
 
     @OneToOne(fetch = FetchType.LAZY,mappedBy = "customer")
     private Address address;
@@ -57,11 +57,11 @@ public class Customer {
     }
 
     public long getId() {
-        return customer_id;
+        return id;
     }
 
     public void setId(long id) {
-        this.customer_id = id;
+        this.id = id;
     }
 
     public String getFirstName() {
@@ -101,5 +101,13 @@ public class Customer {
 
     public void setBankAccount(String bankAccount) {
         this.bankAccount = bankAccount;
+    }
+
+    public File getFile() {
+        return file;
+    }
+
+    public void setFile(File file) {
+        this.file = file;
     }
 }

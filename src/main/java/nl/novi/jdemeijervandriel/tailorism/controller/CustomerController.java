@@ -1,12 +1,17 @@
 package nl.novi.jdemeijervandriel.tailorism.controller;
 
 import nl.novi.jdemeijervandriel.tailorism.domain.Customer;
+import nl.novi.jdemeijervandriel.tailorism.domain.File;
 import nl.novi.jdemeijervandriel.tailorism.payload.request.RegisterUserRequest;
+import nl.novi.jdemeijervandriel.tailorism.payload.response.ResponseMessage;
 import nl.novi.jdemeijervandriel.tailorism.service.CustomerService;
+import nl.novi.jdemeijervandriel.tailorism.service.FileStorageService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.multipart.MultipartFile;
 
 import java.util.List;
 
@@ -16,6 +21,9 @@ public class CustomerController {
 
     @Autowired
     private CustomerService customerService;
+
+    @Autowired
+    private FileStorageService fileStorageService;
 
     @GetMapping(value = "/list")
     public ResponseEntity<Object> getCustomers(){
@@ -52,4 +60,27 @@ public class CustomerController {
         return new ResponseEntity<>(customer, HttpStatus.OK);
     }
 
+    @PostMapping("/upload/customerid/{id}")
+    public ResponseEntity<ResponseMessage> uploadFile(@PathVariable long id, @RequestParam("file") MultipartFile file) {
+
+        try{
+            fileStorageService.store(file, id);
+
+            String message = "Upload file succesfully: " + file.getOriginalFilename();
+            return ResponseEntity.status(HttpStatus.OK).body(new ResponseMessage(message));
+        }catch (Exception e){
+            String message = "Couldn't upload the file: " + file.getOriginalFilename() + "!";
+            return ResponseEntity.status(HttpStatus.EXPECTATION_FAILED).body(new ResponseMessage(message));
+        }
+    }
+
+    @GetMapping("/download/{id}")
+    public ResponseEntity<byte[]> getFileById(@PathVariable String id){
+        File file1 = fileStorageService.getFileById(id);
+
+        return  ResponseEntity.ok()
+                .header(HttpHeaders.CONTENT_DISPOSITION,
+                 "attachment; filename=\"" + file1.getName() + "\"")
+                .body(file1.getData());
+    }
 }

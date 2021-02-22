@@ -67,11 +67,13 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 .antMatchers("/api/test/all").permitAll()
                 .antMatchers("/api/test/user").hasRole("USER")
                 .antMatchers("/api/test/admin").hasRole("ADMIN")
-                .antMatchers("/api/customer/**").hasRole("OPERATOR")
-                .antMatchers("/api/customer/register").hasRole("CUSTOMER")
+                .antMatchers("/api/customer/upload/**").permitAll()
+               // .antMatchers("api/customer/upload/**").hasRole("CUSTOMER")
                 .antMatchers("/api/product/**").hasRole("OPERATOR")
                 .antMatchers("/api/order/list").hasRole("OPERATOR")
                 .antMatchers("api/operator/**").hasRole("OPERATOR")
+                //.antMatchers("/api/customer/**").hasRole("OPERATOR")
+               // .antMatchers("/api/customer/register").hasRole("CUSTOMER")
                 .anyRequest().authenticated();
 
         http.addFilterBefore(authenticationJwtTokenFilter(), UsernamePasswordAuthenticationFilter.class);

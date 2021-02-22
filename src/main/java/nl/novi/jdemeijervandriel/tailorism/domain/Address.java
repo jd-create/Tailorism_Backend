@@ -5,7 +5,6 @@ import org.hibernate.action.internal.OrphanRemovalAction;
 
 import javax.persistence.*;
 @Entity
-@Table(name = "address" )
 public class Address {
 
     @Id
