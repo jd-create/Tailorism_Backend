@@ -17,4 +17,20 @@ public class OrderService {
         List<Order> orders = orderRepository.findAll();
         return orders;
     }
+/*
+    public long saveOrder (LaborRequest laborRequest){
+        Order order = new OrderBuilder(laborRequest).buildOrder();
+        Labor labor = new OrderBuilder (laborRequest)
+                .buildLabor();
+
+        Order savedOrder = OrderRepository.save(order);
+        order.setsetTimeOfOrder(timeOfOrder);
+        labor.setCusetStartTime(startTime);
+        product.setDescription(description);
+        product.set
+
+        return customerRepository.save(customer).getId();
+    }
+
+ */
 }

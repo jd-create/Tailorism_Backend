@@ -5,7 +5,7 @@ import nl.novi.jdemeijervandriel.tailorism.domain.Customer;
 import nl.novi.jdemeijervandriel.tailorism.domain.CustomerBuilder;
 import nl.novi.jdemeijervandriel.tailorism.exception.DatabaseErrorException;
 import nl.novi.jdemeijervandriel.tailorism.exception.RecordNotFoundException;
-import nl.novi.jdemeijervandriel.tailorism.payload.request.RegisterUserRequest;
+import nl.novi.jdemeijervandriel.tailorism.payload.RegisterUserRequest;
 import nl.novi.jdemeijervandriel.tailorism.repository.AddressRepository;
 import nl.novi.jdemeijervandriel.tailorism.repository.CustomerRepository;
 import org.springframework.beans.factory.annotation.Autowired;

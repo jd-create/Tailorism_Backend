@@ -1,4 +1,4 @@
-package nl.novi.jdemeijervandriel.tailorism.payload.request;
+package nl.novi.jdemeijervandriel.tailorism.payload;
 
 public class AddressRequest {
 

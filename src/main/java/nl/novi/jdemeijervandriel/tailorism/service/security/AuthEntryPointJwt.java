@@ -1,4 +1,4 @@
-package nl.novi.jdemeijervandriel.tailorism.service.security.jwt;
+package nl.novi.jdemeijervandriel.tailorism.service.security;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

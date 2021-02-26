@@ -1,9 +1,11 @@
 package nl.novi.jdemeijervandriel.tailorism.controller;
 
+import nl.novi.jdemeijervandriel.tailorism.domain.Address;
 import nl.novi.jdemeijervandriel.tailorism.domain.Customer;
 import nl.novi.jdemeijervandriel.tailorism.domain.File;
-import nl.novi.jdemeijervandriel.tailorism.payload.request.RegisterUserRequest;
+import nl.novi.jdemeijervandriel.tailorism.payload.RegisterUserRequest;
 import nl.novi.jdemeijervandriel.tailorism.payload.response.ResponseMessage;
+import nl.novi.jdemeijervandriel.tailorism.repository.AddressRepository;
 import nl.novi.jdemeijervandriel.tailorism.service.CustomerService;
 import nl.novi.jdemeijervandriel.tailorism.service.FileStorageService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,6 +16,7 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
 import java.util.List;
+import java.util.Optional;
 
 @RestController
 @RequestMapping("/api/customer")
@@ -21,6 +24,9 @@ public class CustomerController {
 
     @Autowired
     private CustomerService customerService;
+
+    @Autowired
+    private AddressRepository addressRepository;
 
     @Autowired
     private FileStorageService fileStorageService;
@@ -55,7 +61,8 @@ public class CustomerController {
     }
 
     @PutMapping(value = "/id/{id}")
-    public ResponseEntity<Object> updateCustomer(@PathVariable("id") long id, @RequestBody Customer customer){
+    public ResponseEntity<Object> updateCustomer(@PathVariable("id") long id, @RequestBody Customer customer)
+    {
         customerService.updateCustomer(id, customer);
         return new ResponseEntity<>(customer, HttpStatus.OK);
     }
@@ -73,7 +80,13 @@ public class CustomerController {
             return ResponseEntity.status(HttpStatus.EXPECTATION_FAILED).body(new ResponseMessage(message));
         }
     }
-
+/*
+    @PostMapping(value = "/upload/file", consumes = MediaType.MULTIPART_FORM_DATA_VALUE)
+    public ResponseEntity<Object> uploadFile(@RequestParam("file") MultipartFile file) {
+        File convertFile = new File("D:\\Jennifer\\Projects\\EindprojectJenniferDemeijervanDriel\\Tailorism02_3001_1703\\Springboot" +file.getOriginalFilename());
+        return new ResponseEntity<>("File is uploadeded succesfully", HttpStatus.OK);
+    }
+*/
     @GetMapping("/download/{id}")
     public ResponseEntity<byte[]> getFileById(@PathVariable String id){
         File file1 = fileStorageService.getFileById(id);
@@ -82,5 +95,11 @@ public class CustomerController {
                 .header(HttpHeaders.CONTENT_DISPOSITION,
                  "attachment; filename=\"" + file1.getName() + "\"")
                 .body(file1.getData());
+    }
+
+    @GetMapping("/address/customer_lastname/{lastname}")
+    public Optional<Address> findAddressByCustomer_lastname(@PathVariable ("lastname")String lastname){
+        Optional<Address> address1 = addressRepository.findAddressByCustomer_LastName(lastname);
+        return address1;
     }
 }

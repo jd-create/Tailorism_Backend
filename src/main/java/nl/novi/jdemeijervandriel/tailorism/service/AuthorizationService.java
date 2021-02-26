@@ -3,14 +3,14 @@ package nl.novi.jdemeijervandriel.tailorism.service;
 import nl.novi.jdemeijervandriel.tailorism.domain.ERole;
 import nl.novi.jdemeijervandriel.tailorism.domain.Role;
 import nl.novi.jdemeijervandriel.tailorism.domain.User;
-import nl.novi.jdemeijervandriel.tailorism.payload.request.LoginRequest;
-import nl.novi.jdemeijervandriel.tailorism.payload.request.SignupRequest;
+import nl.novi.jdemeijervandriel.tailorism.payload.LoginRequest;
+import nl.novi.jdemeijervandriel.tailorism.payload.SignupRequest;
 import nl.novi.jdemeijervandriel.tailorism.payload.response.JwtResponse;
 import nl.novi.jdemeijervandriel.tailorism.payload.response.MessageResponse;
 import nl.novi.jdemeijervandriel.tailorism.repository.RoleRepository;
 import nl.novi.jdemeijervandriel.tailorism.repository.UserRepository;
-import nl.novi.jdemeijervandriel.tailorism.service.security.jwt.AuthEntryPointJwt;
-import nl.novi.jdemeijervandriel.tailorism.service.security.jwt.JwtUtils;
+import nl.novi.jdemeijervandriel.tailorism.service.security.AuthEntryPointJwt;
+import nl.novi.jdemeijervandriel.tailorism.service.security.JwtUtils;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;

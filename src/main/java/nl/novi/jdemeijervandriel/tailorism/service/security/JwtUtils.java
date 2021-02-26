@@ -1,4 +1,4 @@
-package nl.novi.jdemeijervandriel.tailorism.service.security.jwt;
+package nl.novi.jdemeijervandriel.tailorism.service.security;
 
 import io.jsonwebtoken.ExpiredJwtException;
 import io.jsonwebtoken.Jwts;

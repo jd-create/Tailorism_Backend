@@ -36,10 +36,14 @@ public class ProductController {
         return new ResponseEntity<>(products, HttpStatus.OK);
     }
 
-     @GetMapping(value = "/status/{status}" )
-    public ResponseEntity<Object> findProductByStatus(@PathVariable ("status") String name)
+    /* @GetMapping(value = "/status/{status}" )
+    public ResponseEntity<Object> findProductByStatus(@PathVariable ("status") String status)
      {
-         Optional<Product> productByStatus = productRepository.findProductsByStatus(name);
-         return  new ResponseEntity<>(productByStatus, HttpStatus.OK);
-     }
+         long status_long;
+
+         status
+
+         Optional<Product> productByStatus = productRepository.findProductsByStatus(status_long);
+         return new ResponseEntity<>(productByStatus, HttpStatus.OK);
+     }*/
 }

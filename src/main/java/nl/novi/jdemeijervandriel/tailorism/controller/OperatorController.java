@@ -1,8 +1,7 @@
 package nl.novi.jdemeijervandriel.tailorism.controller;
 
 import nl.novi.jdemeijervandriel.tailorism.domain.*;
-import nl.novi.jdemeijervandriel.tailorism.payload.request.AddressRequest;
-import nl.novi.jdemeijervandriel.tailorism.payload.request.RoleRequest;
+import nl.novi.jdemeijervandriel.tailorism.payload.AddressRequest;
 import nl.novi.jdemeijervandriel.tailorism.repository.AddressRepository;
 import nl.novi.jdemeijervandriel.tailorism.repository.CustomerRepository;
 import nl.novi.jdemeijervandriel.tailorism.repository.RoleRepository;

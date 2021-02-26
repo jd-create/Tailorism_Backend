@@ -1,4 +1,4 @@
-package nl.novi.jdemeijervandriel.tailorism.payload.request;
+package nl.novi.jdemeijervandriel.tailorism.payload;
 
 import nl.novi.jdemeijervandriel.tailorism.domain.ERole;
 
@@ -18,13 +18,6 @@ public class SignupRequest {
     @Size(max = 50)
     @Email
     private String email;
-
-    //private Set<String> role;
- /*   {
-        role.add("ROLE_CUSTOMER");
-        //role = ERole.ROLE_CUSTOMER;
-    }
-*/
 
     @NotBlank
     @Size(min = 6, max = 40)
@@ -53,16 +46,13 @@ public class SignupRequest {
     public void setPassword(String password) {
         this.password = password;
     }
-/*
-    public void setRole(Set<String> role) {
-        this.role = role;
-    }*/
+
 
     public Set<String> getRole() {
         Set<String> tempSet = new HashSet<String>();
         tempSet.add("customer");
         return tempSet;
-        //return this.role;
+
     }
 
 

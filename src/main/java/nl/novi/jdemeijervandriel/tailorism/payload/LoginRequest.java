@@ -1,4 +1,4 @@
-package nl.novi.jdemeijervandriel.tailorism.payload.request;
+package nl.novi.jdemeijervandriel.tailorism.payload;
 
 public class LoginRequest {
 
@@ -20,4 +20,5 @@ public class LoginRequest {
     public void setPassword(String password) {
         this.password = password;
     }
+
 }

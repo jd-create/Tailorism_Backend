@@ -14,8 +14,9 @@ public class Labor extends Product{
 
     public Labor(){}
 
-    public Labor(String startTime, String productName, String description, Status status){
+    public Labor(String startTime, String endTime,String productName, String description, Status status){
         this.startTime = startTime;
+        this.endTime = endTime;
         super.productName = productName;
         super.description = description;
         super.status = status;

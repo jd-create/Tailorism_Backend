@@ -1,7 +1,7 @@
 package nl.novi.jdemeijervandriel.tailorism.controller;
 
-import nl.novi.jdemeijervandriel.tailorism.payload.request.LoginRequest;
-import nl.novi.jdemeijervandriel.tailorism.payload.request.SignupRequest;
+import nl.novi.jdemeijervandriel.tailorism.payload.LoginRequest;
+import nl.novi.jdemeijervandriel.tailorism.payload.SignupRequest;
 import nl.novi.jdemeijervandriel.tailorism.payload.response.JwtResponse;
 import nl.novi.jdemeijervandriel.tailorism.payload.response.MessageResponse;
 import nl.novi.jdemeijervandriel.tailorism.service.AuthorizationService;

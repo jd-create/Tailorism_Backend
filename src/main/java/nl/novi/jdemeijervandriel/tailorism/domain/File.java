@@ -30,6 +30,9 @@ public class File {
         this.type = type;
         this.data = data;
     }
+    //tbv fileupload voorbeeld
+    public File(String originalFilename) {
+    }
 
     public String getId() {
         return id;

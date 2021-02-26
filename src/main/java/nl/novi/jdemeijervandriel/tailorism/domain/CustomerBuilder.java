@@ -1,6 +1,6 @@
 package nl.novi.jdemeijervandriel.tailorism.domain;
 
-import nl.novi.jdemeijervandriel.tailorism.payload.request.RegisterUserRequest;
+import nl.novi.jdemeijervandriel.tailorism.payload.RegisterUserRequest;
 
 public class CustomerBuilder {
 

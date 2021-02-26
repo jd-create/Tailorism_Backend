@@ -1,7 +1,5 @@
 package nl.novi.jdemeijervandriel.tailorism.service.security;
 
-import nl.novi.jdemeijervandriel.tailorism.service.security.jwt.AuthEntryPointJwt;
-import nl.novi.jdemeijervandriel.tailorism.service.security.jwt.AuthTokenFilter;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.annotation.Bean;
@@ -67,8 +65,8 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 .antMatchers("/api/test/all").permitAll()
                 .antMatchers("/api/test/user").hasRole("USER")
                 .antMatchers("/api/test/admin").hasRole("ADMIN")
-                .antMatchers("/api/customer/upload/**").permitAll()
-               // .antMatchers("api/customer/upload/**").hasRole("CUSTOMER")
+               // .antMatchers("/api/customer/address/customer_lastname/*").permitAll()
+                .antMatchers("/api/customer/upload/customerid/*").permitAll()
                 .antMatchers("/api/product/**").hasRole("OPERATOR")
                 .antMatchers("/api/order/list").hasRole("OPERATOR")
                 .antMatchers("api/operator/**").hasRole("OPERATOR")
