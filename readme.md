@@ -68,30 +68,30 @@ De back-end is op de volgende end-points te bereiken:
      * Alleen (ingelogd) gebruikers met de de customer-rol kunnen data uit deze API uitlezen.
  11. `/api/customer/register`
     * Alleen (ingelogd) gebruikers met de customer-rol kunnen data uit deze API uitlezen.     
- 13. `/api/customer/upload/customerid/{id}`
+ 12. `/api/customer/upload/customerid/{id}`
      * Alleen (ingelogd) gebruikers met de customer-rol kunnen data uit deze API uitlezen.
- 14. `/api/customer/download/customerid/{id}`
+ 13. `/api/customer/download/customerid/{id}`
     * Alleen (ingelogd) gebruikers met de customer-rol kunnen data uit deze API uitlezen.    
- 15. `/api/customer/address/customer_lastname/{lastname}`
+ 14. `/api/customer/address/customer_lastname/{lastname}`
     * Alleen (ingelogd) gebruikers met de operator-rol kunnen data uit deze API uitlezen.
 #OPERATOR
- 16. `/api/operator/customer/list`
+ 15. `/api/operator/customer/list`
      * Alleen (ingelogd) gebruikers met de operator-rol kunnen data uit deze API uitlezen.
- 8. `/api/operator/customer/lastname/{lastname}`
+ 16. `/api/operator/customer/lastname/{lastname}`
      * Alleen (ingelogd) gebruikers met de operator-rol kunnen data uit deze API uitlezen.
- 8. `/api/operator/customer/id/{id}`
+ 17. `/api/operator/customer/id/{id}`
     * Alleen (ingelogd) gebruikers met de operator-rol kunnen data uit deze API uitlezen. 
- 8. `/api/customer/order/list`
+ 18. `/api/customer/order/list`
      * Alleen (ingelogd) gebruikers met de operator-rol kunnen data uit deze API uitlezen.
- 8. `/api/customer/product/list`
+ 19. `/api/customer/product/list`
      * Alleen (ingelogd) gebruikers met de tailor-rol kunnen data uit deze API uitlezen.
- 8. `/api/customer/addressbystreetandhousenumber/list`
+ 20. `/api/customer/addressbystreetandhousenumber/list`
     * Alleen (ingelogd) gebruikers met de tailor-rol kunnen data uit deze API uitlezen.   
 #ORDER
-8. `/api/order/list`
+ 21. `/api/order/list`
     * Alleen (ingelogd) gebruikers met de operator-rol kunnen data uit deze API uitlezen.
 #PRODUCT
-8. `/api/product/list`
+ 22. `/api/product/list`
     * Alleen (ingelogd) gebruikers met de tailor-rol kunnen data uit deze API uitlezen.
     
 ## Hoe te gebruiken.
