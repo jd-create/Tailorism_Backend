@@ -22,7 +22,6 @@ public class CustomerService {
     @Autowired
     AddressRepository addressRepository;
 
-
     public List<Customer> getAllCustomers()
     {
         List<Customer> customers = customerRepository.findAll();

@@ -43,6 +43,8 @@ public class Customer {
 
     public Customer(){}
 
+    public Customer(String firstName, String lastName){}
+
     public Customer(String firstName, String lastName, String telephoneNumber, String bankAccount){
         this.firstName = firstName;
         this.lastName = lastName;
