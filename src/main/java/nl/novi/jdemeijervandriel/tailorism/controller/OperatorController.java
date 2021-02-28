@@ -13,6 +13,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
+
 @RestController
 @RequestMapping("/api/operator")
 public class OperatorController {
@@ -30,16 +31,7 @@ public class OperatorController {
     private ProductService productService;
 
     @Autowired
-    private RoleRepository roleRepository;
-
-    @Autowired
-    private UserRepository userRepository;
-
-    @Autowired
     private AddressRepository addressRepository;
-
-    @Autowired
-    private UserDetailsServiceImpl userDetailsService;
 
     @GetMapping(value = "/customer/list")
     public ResponseEntity<Object> getCustomers(){

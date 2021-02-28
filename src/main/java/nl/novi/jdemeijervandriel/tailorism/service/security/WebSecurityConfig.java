@@ -55,7 +55,6 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     public PasswordEncoder passwordEncoder() {
         return new BCryptPasswordEncoder();
     }
-//TODO rechten aanpassen
 
     @Override
     protected void configure(HttpSecurity http) throws Exception {
@@ -66,15 +65,19 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 .antMatchers("/api/test/all").permitAll()
                 .antMatchers("/api/test/user").hasRole("USER")
                 .antMatchers("/api/test/admin").hasRole("ADMIN")
-               // .antMatchers("/api/customer/address/customer_lastname/*").permitAll()
-                .antMatchers("/api/customer/upload/customerid/*").permitAll()
-                .antMatchers("/api/product/**").hasRole("OPERATOR")
+                .antMatchers("/api/test/customer").hasRole("CUSTOMER")
+                .antMatchers("/api/test/operator").hasRole("OPERATOR")
+                .antMatchers("/api/test/tailor").hasRole("TAILOR")
+                .antMatchers("/api/customer/id/{id}").hasRole("CUSTOMER")
+                .antMatchers("/api/customer/lastname/{lastname}").hasRole("CUSTOMER")
+                .antMatchers("/api/customer/register").hasRole("CUSTOMER")
+                .antMatchers("/api/customer/upload/customerid/*").hasRole("CUSTOMER")
+                .antMatchers("/api/customer/download/customerid/*").hasRole("OPERATOR")
+                .antMatchers("/api/customer/address/customer_lastname/{lastname}").hasRole("OPERATOR")
+                .antMatchers("/api/operator/**").hasRole("OPERATOR")
                 .antMatchers("/api/order/list").hasRole("OPERATOR")
-                .antMatchers("api/operator/**").hasRole("OPERATOR")
-                //.antMatchers("/api/customer/**").hasRole("OPERATOR")
-               // .antMatchers("/api/customer/register").hasRole("CUSTOMER")
+                .antMatchers("/api/product/list").hasRole("TAILOR")
                 .anyRequest().authenticated();
-
         http.addFilterBefore(authenticationJwtTokenFilter(), UsernamePasswordAuthenticationFilter.class);
     }
 }

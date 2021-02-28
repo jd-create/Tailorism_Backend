@@ -30,17 +30,12 @@ public class CustomerController {
     @Autowired
     private FileStorageService fileStorageService;
 
-    @GetMapping(value = "/list")
-    public ResponseEntity<Object> getCustomers(){
-        List<Customer> customers = customerService.getAllCustomers();
-        return new ResponseEntity<>(customers, HttpStatus.OK);
-    }
-
     @GetMapping(value = "/id/{id}")
     public ResponseEntity<Object> getCustomer(@PathVariable("id") long id){
         Customer customer = customerService.getCustomerById(id);
         return new ResponseEntity<>(customer, HttpStatus.OK);
     }
+
     @GetMapping(value = "/lastname/{lastname}")
     public ResponseEntity<Object> getCustomerByLastName(@PathVariable("lastname") String lastname){
         Customer customer = customerService.getCustomerByLastName(lastname);
@@ -80,7 +75,7 @@ public class CustomerController {
         }
     }
 
-    @GetMapping("/download/{id}")
+    @GetMapping("/download/customerid/{id}")
     public ResponseEntity<byte[]> getFileById(@PathVariable String id){
         File file1 = fileStorageService.getFileById(id);
 

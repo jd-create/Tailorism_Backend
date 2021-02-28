@@ -1,0 +1,1271 @@
+{
+	"info": {
+		"_postman_id": "5f5b8799-fb79-444d-b2ac-9ac3ba2b7ad3",
+		"name": "Tailorism",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "signup user",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\": \"user1\",\r\n    \"email\": \"user1@mail.nl\",\r\n    \"password\": \"password\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/api/auth/signup",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"auth",
+						"signup"
+					]
+				},
+				"description": "signup user"
+			},
+			"response": []
+		},
+		{
+			"name": "signup admin",
+			"protocolProfileBehavior": {
+				"strictSSL": true
+			},
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\": \"admin1\",\r\n    \"email\" : \"admin1@mail.nl\",\r\n    \"password\" : \"password\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/auth/signup",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"auth",
+						"signup"
+					]
+				},
+				"description": "new user met role admin"
+			},
+			"response": []
+		},
+		{
+			"name": "signup customer",
+			"protocolProfileBehavior": {
+				"strictSSL": true
+			},
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\": \"customer1\",\r\n    \"email\" : \"customer1@mail.nl\",\r\n    \"password\" : \"password\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/auth/signup",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"auth",
+						"signup"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "signup operator",
+			"protocolProfileBehavior": {
+				"strictSSL": true
+			},
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\": \"operator1\",\r\n    \"email\" : \"operator1@mail.nl\",\r\n    \"password\" : \"password\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/auth/signup",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"auth",
+						"signup"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "signup tailor",
+			"protocolProfileBehavior": {
+				"strictSSL": true
+			},
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\": \"tailor1\",\r\n    \"email\" : \"tailor1@mail.nl\",\r\n    \"password\" : \"password\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/auth/signup",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"auth",
+						"signup"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "test all",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\": \"admin\",\r\n    \"password\": \"password\"\r\n}\r\n\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/test/all",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"test",
+						"all"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "test user",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ1c2VyIiwiaWF0IjoxNjE0NTE4MTUzLCJleHAiOjE2MTQ2MDQ1NTN9.U1uaTa_2VXyH4lkL1nhI-HH6faCO5ixOOtjKJ99JeKM1xhrECIFv0uG-2ZbPq8VuS9NETgTIeWplKHPkdiiITg",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\": \"user\",\r\n    \"password\": \"password\"\r\n}\r\n\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/test/user",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"test",
+						"user"
+					]
+				},
+				"description": "test user"
+			},
+			"response": []
+		},
+		{
+			"name": "test admin",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsImlhdCI6MTYxNDUxODI2OSwiZXhwIjoxNjE0NjA0NjY5fQ.AHaUes5YJHL0jC1UwQlFhKgXHwvqc-Ej52WB9BrKHVMnsI69qHEDpanpx5Japl1ehVLTRKU4BRxbO4F5fkl_Sg",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\": \"admin\",\r\n    \"password\": \"password\"\r\n}\r\n\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/test/admin",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"test",
+						"admin"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "test customer",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJjdXN0b21lciIsImlhdCI6MTYxNDUxODM3MywiZXhwIjoxNjE0NjA0NzczfQ.52K6JTq9jFUbeCe33DvHNi-GslpRKVLTpApElWG8hDOOVlbLa0icRBfBvYRbvFsc-sqQBnfWNcq_N-SqiwfxGg",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\": \"customer\",\r\n    \"password\": \"password\"\r\n}\r\n\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/test/customer",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"test",
+						"customer"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "test operator",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJjdXN0b21lciIsImlhdCI6MTYxNDUxODM3MywiZXhwIjoxNjE0NjA0NzczfQ.52K6JTq9jFUbeCe33DvHNi-GslpRKVLTpApElWG8hDOOVlbLa0icRBfBvYRbvFsc-sqQBnfWNcq_N-SqiwfxGg",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\": \"operator\",\r\n    \"password\": \"password\"\r\n}\r\n\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/test/operator",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"test",
+						"operator"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "test tailor",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJzamFraWUiLCJpYXQiOjE2MTI5NDU0NTMsImV4cCI6MTYxMzAzMTg1M30.yYq8hh90gxWUJWHKO_Vfwg0mEEEelvrSig_d9v03Wvh99-Ovt10qwVt6wTkW1zapaZkqs6lzUe2a5PKs0unzYw",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\": \"jopie\",\r\n    \"password\": \"password\"\r\n}\r\n\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/test/tailor",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"test",
+						"tailor"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "signin user",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\": \"user1\",\r\n    \"password\": \"password\"\r\n   \r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/auth/signin",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"auth",
+						"signin"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "signin admin",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\": \"admin\",\r\n    \"password\": \"password\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/auth/signin",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"auth",
+						"signin"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "signin customer",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\": \"customer\",\r\n    \"password\": \"password\"\r\n   \r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/auth/signin",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"auth",
+						"signin"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "signin operator",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\": \"operator\",\r\n    \"password\": \"password\"\r\n   \r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/auth/signin",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"auth",
+						"signin"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "signin tailor",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\": \"tailor\",\r\n    \"password\": \"password\"\r\n   \r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/auth/signin",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"auth",
+						"signin"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET customer/id",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbjEiLCJpYXQiOjE2MTMyMzI4NzUsImV4cCI6MTYxMzMxOTI3NX0.bo4gI8w_7ZUPf94TJnfZD6aaLqatg_3NxdKrsDA_NPPUXmMrFgCbXG-OUcYFzlxRhDQWn8cLJ3UzZGa7HGmk8w",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/customer/id/2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"customer",
+						"id",
+						"2"
+					]
+				},
+				"description": "get customer attributes by id"
+			},
+			"response": []
+		},
+		{
+			"name": "GET customer/lastname",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbjEiLCJpYXQiOjE2MTM1MDQzNTAsImV4cCI6MTYxMzU5MDc1MH0.CWgygyPNhCQ5xiav4p5xakrCgkdgg0P90xuUfg94GH9C-i77mC9xOBs5Nn_nZKamgbiK8tirGzhSIZ0bvEvVhA",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/customer/Tiktak",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"customer",
+						"Tiktak"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "POST api/customer/ register",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJjdXN0b21lcjEiLCJpYXQiOjE2MTMyMTU1MTcsImV4cCI6MTYxMzMwMTkxN30.8vIbn8UwmZAjErnGmZvinw63bccuT19YEwbcUAzbXc7b2E6QleiQfyt9akxbHoVLksiOvhv7WfuNMHwVgTX5ig",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\": \"customer1\",\r\n    \"password\": \"password\",\r\n    \"firstName\": \"Truus\",\r\n    \"lastName\": \"Toktok\",\r\n    \"street\": \"tafelbergweg\",\r\n    \"houseNumber\": \"3\",\r\n    \"postcode\": \"1234XX\",\r\n    \"city\": \"Lutjebroek\",\r\n    \"phoneNumber\": \"0687654321\",\r\n    \"bankAccount\": \"BANK654321\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/customer/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"customer",
+						""
+					]
+				},
+				"description": "Register profile settings customer"
+			},
+			"response": []
+		},
+		{
+			"name": "DELETE customer by id",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJjdXN0b21lcjIiLCJpYXQiOjE2MTQ1MjM3MjEsImV4cCI6MTYxNDYxMDEyMX0.d1ZljsLjGCv1uwo6b0Gqo4XZTE8v_UF3A8kfON0evww3QXN9vLyWDLwNhAc-PqBJSCb6mjzza7c8aDgv2XevLQ",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/customer/id/4",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"customer",
+						"id",
+						"4"
+					]
+				},
+				"description": "Role: admin"
+			},
+			"response": []
+		},
+		{
+			"name": "DELETE customer by id",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJjdXN0b21lcjIiLCJpYXQiOjE2MTQ1MjM3MjEsImV4cCI6MTYxNDYxMDEyMX0.d1ZljsLjGCv1uwo6b0Gqo4XZTE8v_UF3A8kfON0evww3QXN9vLyWDLwNhAc-PqBJSCb6mjzza7c8aDgv2XevLQ",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"firstName\": \"Jopie\",\r\n    \"lastName\": \"Joviant\",\r\n    \"telephoneNumber\": \"0612345678\",\r\n    \"bankAccount\": \"BANK123456\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/customer/id/4",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"customer",
+						"id",
+						"4"
+					]
+				},
+				"description": "Role: admin"
+			},
+			"response": []
+		},
+		{
+			"name": "customer upload customerid",
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {}
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJjdXN0b21lciIsImlhdCI6MTYxNDUyNTQwMCwiZXhwIjoxNjE0NjExODAwfQ.R74hgHNbGt4SRbY3vwHhPU4xVI7aZlJrE2K_QHUplOJoVctujiQsnE19vNU1SqBUmiY-idm7hqJW1QS38TthKA",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "file",
+							"description": "file",
+							"type": "file",
+							"src": []
+						}
+					],
+					"options": {
+						"raw": {
+							"language": "text"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/customer/upload/customerid/3",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"customer",
+						"upload",
+						"customerid",
+						"3"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET address by customer lastname",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJjdXN0b21lciIsImlhdCI6MTYxNDUzMjc0NywiZXhwIjoxNjE0NjE5MTQ3fQ.C2T_FA374q04BECplfIv7wR_eIsCLIWbu1ZMcwhCJsm_jeJg3h8Q9MyNQVBRGm3GxRW24OAJQaUJHosF7Xoi9Q",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/customer/address/customer_lastname/Joviaal",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"customer",
+						"address",
+						"customer_lastname",
+						"Joviaal"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET for operator get customer/list",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJvcGVyYXRvciIsImlhdCI6MTYxMzczMTEyMiwiZXhwIjoxNjEzODE3NTIyfQ.EV2BPu8UVWTNvaS07492meFqzzK14_2K4IzsnPjMZnprpWpv56A_80iTVhyl_EuZPJE8TJEOxb1ZmXfbcEDOEQ",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/operator/customer/list",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"operator",
+						"customer",
+						"list"
+					]
+				},
+				"description": "only for role operator"
+			},
+			"response": []
+		},
+		{
+			"name": "GET for operator get customer by lastname",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJvcGVyYXRvciIsImlhdCI6MTYxMzczMTEyMiwiZXhwIjoxNjEzODE3NTIyfQ.EV2BPu8UVWTNvaS07492meFqzzK14_2K4IzsnPjMZnprpWpv56A_80iTVhyl_EuZPJE8TJEOxb1ZmXfbcEDOEQ",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/operator/customer/lastname/Joviaal",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"operator",
+						"customer",
+						"lastname",
+						"Joviaal"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET for operator get customer by id",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJvcGVyYXRvciIsImlhdCI6MTYxMzczMTEyMiwiZXhwIjoxNjEzODE3NTIyfQ.EV2BPu8UVWTNvaS07492meFqzzK14_2K4IzsnPjMZnprpWpv56A_80iTVhyl_EuZPJE8TJEOxb1ZmXfbcEDOEQ",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/operator/customer/id/3",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"operator",
+						"customer",
+						"id",
+						"3"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET operator/order/list",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJjdXN0b21lciIsImlhdCI6MTYxNDUzMzc3NSwiZXhwIjoxNjE0NjIwMTc1fQ.OkkSL14I3ByW09X_qSrUAhjrqkBp_A-A9StFCg_gT31xAoa4xxteQlYLxlGrpeWvQdnauRY7NTOIEoZvZ_s6tw",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/operator/order/list",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"operator",
+						"order",
+						"list"
+					]
+				},
+				"description": "only possible for Admin"
+			},
+			"response": []
+		},
+		{
+			"name": "GET order/list in order controller",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJjdXN0b21lciIsImlhdCI6MTYxNDUzMzc3NSwiZXhwIjoxNjE0NjIwMTc1fQ.OkkSL14I3ByW09X_qSrUAhjrqkBp_A-A9StFCg_gT31xAoa4xxteQlYLxlGrpeWvQdnauRY7NTOIEoZvZ_s6tw",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/operator/order/list",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"operator",
+						"order",
+						"list"
+					]
+				},
+				"description": "only possible for Admin"
+			},
+			"response": []
+		},
+		{
+			"name": "GET for operator get list of products",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJvcGVyYXRvciIsImlhdCI6MTYxMzczNTUzMCwiZXhwIjoxNjEzODIxOTMwfQ.TG9EyusiCuFozydTV2SqWpInXtRSAbp3PoLF74yJ9SVSgVcgVSEEnb_l7GkSGulZJV_V3tRQxo7S3xnXkLAcAg",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/operator/product/list",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"operator",
+						"product",
+						"list"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET for operator addres by street and housenumber",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJvcGVyYXRvciIsImlhdCI6MTYxNDUzNDAyOCwiZXhwIjoxNjE0NjIwNDI4fQ.M2b8qglRl-uS71Tw9uGI5b3lnExamIXbuKON5izAhUs0P10U4ZWhG_KCt4IgS1BF2iAQS4PGLN0UCwPve9B0sA",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"street\": \"dwarsstraat\",\r\n    \"houseNumber\": \"15\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/operator/addressbystreetandhousenumber/list",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"operator",
+						"addressbystreetandhousenumber",
+						"list"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET product/list",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbjEiLCJpYXQiOjE2MTMyNDU1ODgsImV4cCI6MTYxMzMzMTk4OH0.Dt46yf86IJHIAVCP_qP8hRQXOKrvUmKh5GBBaPBfqg-_XBZttwoXPmwCAMZzq5FYlLGDGanKQhktEHuf96TA-Q",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/product/list",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"product",
+						"list"
+					]
+				},
+				"description": "only to get with role ADMIN"
+			},
+			"response": []
+		}
+	]
+}
