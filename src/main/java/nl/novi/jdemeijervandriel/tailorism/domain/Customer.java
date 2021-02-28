@@ -1,9 +1,6 @@
 package nl.novi.jdemeijervandriel.tailorism.domain;
 
 import com.sun.istack.NotNull;
-
-
-
 import javax.persistence.*;
 import java.util.Set;
 

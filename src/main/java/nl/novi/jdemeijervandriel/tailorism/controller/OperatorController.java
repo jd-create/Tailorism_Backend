@@ -11,7 +11,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-
 import java.util.List;
 
 @RestController
@@ -71,14 +70,6 @@ public class OperatorController {
         List<Product> products = productService.getAllProducts();
         return new ResponseEntity<>(products,HttpStatus.OK);
         }
-
-    /*@GetMapping(value = "/user/{email}/{username}/list")
-    public ResponseEntity<Object> findByUsernameAndRoles(@RequestBody RoleRequest roleRequest){
-        List<User> userWithRoleCustomer = userRepository.findByUsernameAndRoles(roleRequest.getUsername(),role);
-            return new ResponseEntity<>(userWithRoleCustomer,HttpStatus.OK);
-        }
-    }
-    */
 
     @GetMapping("/addressbystreetandhousenumber/list")
     public ResponseEntity<Object> findByStreetAndAndHouseNumber(@RequestBody AddressRequest addressRequest){

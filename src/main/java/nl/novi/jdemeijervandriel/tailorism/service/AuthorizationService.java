@@ -11,7 +11,6 @@ import nl.novi.jdemeijervandriel.tailorism.repository.RoleRepository;
 import nl.novi.jdemeijervandriel.tailorism.repository.UserRepository;
 import nl.novi.jdemeijervandriel.tailorism.service.security.AuthEntryPointJwt;
 import nl.novi.jdemeijervandriel.tailorism.service.security.JwtUtils;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.authentication.AuthenticationManager;
@@ -21,7 +20,6 @@ import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.validation.annotation.Validated;
-
 import javax.validation.Valid;
 import java.util.HashSet;
 import java.util.List;

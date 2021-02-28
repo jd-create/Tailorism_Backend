@@ -10,7 +10,6 @@ import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.web.authentication.WebAuthenticationDetailsSource;
 import org.springframework.util.StringUtils;
 import org.springframework.web.filter.OncePerRequestFilter;
-
 import javax.servlet.FilterChain;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
@@ -24,6 +23,7 @@ import java.io.IOException;
  * – uses the AuthenticationToken as Authentication object and stores it in the SecurityContext for future filter uses
  * (e.g: Authorization filters).
  */
+
 public class AuthTokenFilter extends OncePerRequestFilter {
 
     @Autowired

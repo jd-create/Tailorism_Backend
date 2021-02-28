@@ -1,7 +1,5 @@
 package nl.novi.jdemeijervandriel.tailorism.domain;
 
-import org.hibernate.annotations.GenericGenerator;
-
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -34,7 +32,6 @@ public class User {
     private Set<Role> roles;
 
     public User() {
-
     }
 
     public User(String username, String email, String password) {

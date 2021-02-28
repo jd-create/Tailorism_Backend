@@ -14,7 +14,6 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
-
 import java.util.List;
 import java.util.Optional;
 
@@ -80,13 +79,7 @@ public class CustomerController {
             return ResponseEntity.status(HttpStatus.EXPECTATION_FAILED).body(new ResponseMessage(message));
         }
     }
-/*
-    @PostMapping(value = "/upload/file", consumes = MediaType.MULTIPART_FORM_DATA_VALUE)
-    public ResponseEntity<Object> uploadFile(@RequestParam("file") MultipartFile file) {
-        File convertFile = new File("D:\\Jennifer\\Projects\\EindprojectJenniferDemeijervanDriel\\Tailorism02_3001_1703\\Springboot" +file.getOriginalFilename());
-        return new ResponseEntity<>("File is uploadeded succesfully", HttpStatus.OK);
-    }
-*/
+
     @GetMapping("/download/{id}")
     public ResponseEntity<byte[]> getFileById(@PathVariable String id){
         File file1 = fileStorageService.getFileById(id);

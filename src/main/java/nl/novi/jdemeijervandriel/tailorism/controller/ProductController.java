@@ -1,8 +1,7 @@
 package nl.novi.jdemeijervandriel.tailorism.controller;
 
-import nl.novi.jdemeijervandriel.tailorism.domain.EStatus;
+
 import nl.novi.jdemeijervandriel.tailorism.domain.Product;
-import nl.novi.jdemeijervandriel.tailorism.domain.Status;
 import nl.novi.jdemeijervandriel.tailorism.repository.ProductRepository;
 import nl.novi.jdemeijervandriel.tailorism.repository.StatusRepository;
 import nl.novi.jdemeijervandriel.tailorism.service.ProductService;
@@ -10,12 +9,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-
 import java.util.List;
-import java.util.Optional;
+
 
 @RestController
 @RequestMapping("/api/product")
@@ -36,14 +33,4 @@ public class ProductController {
         return new ResponseEntity<>(products, HttpStatus.OK);
     }
 
-    /* @GetMapping(value = "/status/{status}" )
-    public ResponseEntity<Object> findProductByStatus(@PathVariable ("status") String status)
-     {
-         long status_long;
-
-         status
-
-         Optional<Product> productByStatus = productRepository.findProductsByStatus(status_long);
-         return new ResponseEntity<>(productByStatus, HttpStatus.OK);
-     }*/
 }

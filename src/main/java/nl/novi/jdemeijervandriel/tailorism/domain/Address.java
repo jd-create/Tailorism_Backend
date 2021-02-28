@@ -1,7 +1,7 @@
 package nl.novi.jdemeijervandriel.tailorism.domain;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
-import org.hibernate.action.internal.OrphanRemovalAction;
+
 
 import javax.persistence.*;
 @Entity
@@ -21,7 +21,7 @@ public class Address {
     @OneToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL,orphanRemoval = true)
     @JoinColumn(name ="id")
     private Customer customer;
-//TODO make a many to one in stead of one to one
+
 
     public Address(){}
 

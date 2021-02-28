@@ -9,7 +9,7 @@ public class TestService {
     public String generatePublicContent() {
         return "Public Content.";
     }
-/* volgende verwijderd in onderstaande regel vóór ") or hasRole('MODERATOR') or hasRole('ADMIN') or hasRole('CUSTOMER') or hasRole('TAILOR')*/
+
     @PreAuthorize("hasRole('USER') ")
     public String generateUserContent() {
         return "User Content.";
@@ -35,4 +35,3 @@ public class TestService {
         return "Operator Board.";
     }
 }
-//TODO toewijzingen in WebSecurityConfig naar hier verplaatsen en class hernoemen

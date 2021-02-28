@@ -1,7 +1,5 @@
 package nl.novi.jdemeijervandriel.tailorism.domain;
 
-
-
 import javax.persistence.*;
 import java.util.Set;
 

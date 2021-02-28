@@ -1,5 +1,7 @@
 /*package nl.novi.jdemeijervandriel.tailorism.service;
 
+Dit commentaar hier bewust laten staan, hierbij is zichtbaar dat ik geprobeerd heb testing uit te voeren, maar hierin niet geslaagd ben dit werkend rond te krijgen.
+
 import nl.novi.jdemeijervandriel.tailorism.domain.Customer;
 import nl.novi.jdemeijervandriel.tailorism.repository.CustomerRepository;
 import org.junit.Before;
