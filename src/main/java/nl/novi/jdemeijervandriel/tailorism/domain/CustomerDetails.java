@@ -6,7 +6,7 @@ import java.util.Set;
 
 @Entity
 @Table(name = "customerdetails")
-public class Customer {
+public class CustomerDetails {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
@@ -25,25 +25,25 @@ public class Customer {
     @Column(name = "bank_account")
     private String bankAccount;
 
-    @OneToOne(mappedBy = "customer")
+    @OneToOne(mappedBy = "customerDetails")
     private File file;
 
-    @OneToOne(fetch = FetchType.LAZY,mappedBy = "customer")
+    @OneToOne(fetch = FetchType.LAZY,mappedBy = "customerDetails")
     private Address address;
 
     @OneToMany(fetch = FetchType.LAZY,
-            mappedBy = "customer",
+            mappedBy = "customerDetails",
             cascade = CascadeType.ALL,
             orphanRemoval = true)
     private Set<Order> orders;
 
 
 
-    public Customer(){}
+    public CustomerDetails(){}
 
-    public Customer(String firstName, String lastName){}
+    public CustomerDetails(String firstName, String lastName){}
 
-    public Customer(String firstName, String lastName, String telephoneNumber, String bankAccount){
+    public CustomerDetails(String firstName, String lastName, String telephoneNumber, String bankAccount){
         this.firstName = firstName;
         this.lastName = lastName;
         this.telephoneNumber = telephoneNumber;

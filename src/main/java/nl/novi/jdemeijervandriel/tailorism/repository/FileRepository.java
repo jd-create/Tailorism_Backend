@@ -5,6 +5,6 @@ import org.springframework.data.jpa.repository.JpaRepository;
 
 public interface FileRepository extends JpaRepository<File, String> {
 
-    boolean existsByCustomer_Id(long id);
-    File findByCustomer_Id(long id);
+    boolean existsByCustomerDetails_Id(long id);
+    File findByCustomerDetails_Id(long id);
 }

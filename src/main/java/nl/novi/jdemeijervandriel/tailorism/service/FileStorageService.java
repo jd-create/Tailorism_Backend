@@ -1,7 +1,7 @@
 package nl.novi.jdemeijervandriel.tailorism.service;
 
 
-import nl.novi.jdemeijervandriel.tailorism.domain.Customer;
+import nl.novi.jdemeijervandriel.tailorism.domain.CustomerDetails;
 import nl.novi.jdemeijervandriel.tailorism.domain.File;
 import nl.novi.jdemeijervandriel.tailorism.exception.RecordNotFoundException;
 import nl.novi.jdemeijervandriel.tailorism.repository.CustomerRepository;
@@ -27,11 +27,11 @@ public class FileStorageService {
         String fileName = StringUtils.cleanPath(file.getOriginalFilename());
         File file1 = new File(fileName, file.getContentType(), file.getBytes());
 
-        Customer customer = null;
+        CustomerDetails customerDetails = null;
         if (customerRepository.existsById((id))) {
-            customer = customerRepository.findById(id).orElse(null);
+            customerDetails = customerRepository.findById(id).orElse(null);
         }
-        file1.setCustomer(customer);
+        file1.setCustomer(customerDetails);
 
         return fileRepository.save(file1);
 
@@ -42,8 +42,9 @@ public class FileStorageService {
     }
 
     public File getFile(long id){
-        if(fileRepository.existsByCustomer_Id(id)){
-            return fileRepository.findByCustomer_Id(id);
+        if(fileRepository.existsByCustomerDetails_Id(
+                id)){
+            return fileRepository.findByCustomerDetails_Id(id);
         }
         else{
         throw new RecordNotFoundException();

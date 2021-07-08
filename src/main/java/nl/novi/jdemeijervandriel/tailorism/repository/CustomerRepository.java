@@ -1,11 +1,11 @@
 package nl.novi.jdemeijervandriel.tailorism.repository;
 
-import nl.novi.jdemeijervandriel.tailorism.domain.Customer;
+import nl.novi.jdemeijervandriel.tailorism.domain.CustomerDetails;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 
 
-public interface CustomerRepository extends JpaRepository<Customer, Long> {
+public interface CustomerRepository extends JpaRepository<CustomerDetails, Long> {
 
-    public Customer findByLastNameIgnoreCase(String lastName);
+    public CustomerDetails findByLastNameIgnoreCase(String lastName);
 }

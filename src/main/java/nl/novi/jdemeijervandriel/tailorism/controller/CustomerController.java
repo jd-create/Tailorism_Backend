@@ -1,7 +1,7 @@
 package nl.novi.jdemeijervandriel.tailorism.controller;
 
 import nl.novi.jdemeijervandriel.tailorism.domain.Address;
-import nl.novi.jdemeijervandriel.tailorism.domain.Customer;
+import nl.novi.jdemeijervandriel.tailorism.domain.CustomerDetails;
 import nl.novi.jdemeijervandriel.tailorism.domain.File;
 import nl.novi.jdemeijervandriel.tailorism.payload.RegisterUserRequest;
 import nl.novi.jdemeijervandriel.tailorism.payload.response.ResponseMessage;
@@ -14,7 +14,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
-import java.util.List;
+
 import java.util.Optional;
 
 @RestController
@@ -32,14 +32,14 @@ public class CustomerController {
 
     @GetMapping(value = "/id/{id}")
     public ResponseEntity<Object> getCustomer(@PathVariable("id") long id){
-        Customer customer = customerService.getCustomerById(id);
-        return new ResponseEntity<>(customer, HttpStatus.OK);
+        CustomerDetails customerDetails = customerService.getCustomerById(id);
+        return new ResponseEntity<>(customerDetails, HttpStatus.OK);
     }
 
     @GetMapping(value = "/lastname/{lastname}")
     public ResponseEntity<Object> getCustomerByLastName(@PathVariable("lastname") String lastname){
-        Customer customer = customerService.getCustomerByLastName(lastname);
-        return new ResponseEntity<>(customer, HttpStatus.OK);
+        CustomerDetails customerDetails = customerService.getCustomerByLastName(lastname);
+        return new ResponseEntity<>(customerDetails, HttpStatus.OK);
     }
 
     @PostMapping(value = "/register")
@@ -55,10 +55,10 @@ public class CustomerController {
     }
 
     @PutMapping(value = "/id/{id}")
-    public ResponseEntity<Object> updateCustomer(@PathVariable("id") long id, @RequestBody Customer customer)
+    public ResponseEntity<Object> updateCustomer(@PathVariable("id") long id, @RequestBody CustomerDetails customerDetails)
     {
-        customerService.updateCustomer(id, customer);
-        return new ResponseEntity<>(customer, HttpStatus.OK);
+        customerService.updateCustomer(id, customerDetails);
+        return new ResponseEntity<>(customerDetails, HttpStatus.OK);
     }
 
     @PostMapping("/upload/customerid/{id}")
@@ -87,7 +87,7 @@ public class CustomerController {
 
     @GetMapping("/address/customer_lastname/{lastname}")
     public Optional<Address> findAddressByCustomer_lastname(@PathVariable ("lastname")String lastname){
-        Optional<Address> address1 = addressRepository.findAddressByCustomer_LastName(lastname);
+        Optional<Address> address1 = addressRepository.findAddressByCustomerDetails_LastName(lastname);
         return address1;
     }
 }

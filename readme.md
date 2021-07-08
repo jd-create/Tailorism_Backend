@@ -23,20 +23,20 @@ Een inleiding
 De applicatie is nu klaar voor gebruik.
 
 ## Korte uitleg 
-Dit project is een applicatie voor een naaiatelier, waar een drietal gebruikers in deelneemt. De klant/customer, 
+Dit project is een applicatie voor een naaiatelier, waar een drietal gebruikers in deelneemt. De klant/customerDetails, 
 de naaister/tailor, en het staflid/operator die de administratie doet en aanpassingen kan maken op het systeem. 
 Iedereen is bij een eerste inlog user en wordt omgezet naar een klant. Alleen de operator kan rollen aanpassen. Een
 gebruiker kan inloggen en vervolgens registreren met extra gegevens. Door de rol kan hij na inlog met de rest endpoint 
 kan communiceren waar hij de authorisatie voor heeft.
 
 ### Gebruikersrollen
-Dit voorbeeld maakt gebruik van drie user-rollen. `tailor`, `operator` , `customer`, `admin`& `user`. 
-Elke gebruiker wordt eerst automatisch `customer`. Het is belangrijk om je te realiseren dat wanneer een gebruiker 
+Dit voorbeeld maakt gebruik van drie user-rollen. `tailor`, `operator` , `customerDetails`, `admin`& `user`. 
+Elke gebruiker wordt eerst automatisch `customerDetails`. Het is belangrijk om je te realiseren dat wanneer een gebruiker 
 de `admin`-rol heeft dat deze dan niet automatisch de `user` en `operator`-rollen heeft. 
 
 ### Voorbeeld 
 Je maakt een gebruiker aan, geeft geen rol op, deze krijgt automatisch de customerrol. Je logt in met de rol operator, 
-en past de rol van de customer aan. Wanneer een gebruiker ingelogd iets vraagt dat niet past bij zijn rechten dan geeft
+en past de rol van de customerDetails aan. Wanneer een gebruiker ingelogd iets vraagt dat niet past bij zijn rechten dan geeft
 de applicatie de volgende error terug:
 ```
 HTTP 401 Unauthorized
@@ -45,7 +45,7 @@ HTTP 401 Unauthorized
 ### Rest endpoints.
 De back-end is op de volgende end-points te bereiken:
  1. `/api/auth/signup`
-    * Hier kun je de volgende JSON sturen om een gebruiker aan te maken, rol is customer.
+    * Hier kun je de volgende JSON sturen om een gebruiker aan te maken, rol is customerDetails.
  2. `/api/auth/signin`
     * Hier kun je login gegevens naar sturen. Je krijgt een Authorisatie-token terug.
 #TEST    
@@ -55,37 +55,37 @@ De back-end is op de volgende end-points te bereiken:
     * Alleen (ingelogd) gebruikers met de user-rol kunnen data uit deze API uitlezen.
  5. `/api/test/admin`
      * Alleen (ingelogd) gebruikers met de admin-rol kunnen data uit deze API uitlezen.
- 6. `/api/test/customer`
-    * Alleen (ingelogd) gebruikers met de customer-rol kunnen data uit deze API uitlezen.
+ 6. `/api/test/customerDetails`
+    * Alleen (ingelogd) gebruikers met de customerDetails-rol kunnen data uit deze API uitlezen.
  7. `/api/test/operator`
     * Alleen (ingelogd) gebruikers met de operator-rol kunnen data uit deze API uitlezen.
  8. `/api/test/tailor`
     * Alleen (ingelogd) gebruikers met de tailor-rol kunnen data uit deze API uitlezen.    
 #CUSTOMER
- 9. `/api/customer/id/{id}`
-     * Alleen (ingelogd) gebruikers met de customer-rol kunnen data uit deze API uitlezen.
- 10. `/api/customer/lastname/{lastname}`
-     * Alleen (ingelogd) gebruikers met de de customer-rol kunnen data uit deze API uitlezen.
- 11. `/api/customer/register`
-    * Alleen (ingelogd) gebruikers met de customer-rol kunnen data uit deze API uitlezen.     
- 12. `/api/customer/upload/customerid/{id}`
-     * Alleen (ingelogd) gebruikers met de customer-rol kunnen data uit deze API uitlezen.
- 13. `/api/customer/download/customerid/{id}`
-    * Alleen (ingelogd) gebruikers met de customer-rol kunnen data uit deze API uitlezen.    
- 14. `/api/customer/address/customer_lastname/{lastname}`
+ 9. `/api/customerDetails/id/{id}`
+     * Alleen (ingelogd) gebruikers met de customerDetails-rol kunnen data uit deze API uitlezen.
+ 10. `/api/customerDetails/lastname/{lastname}`
+     * Alleen (ingelogd) gebruikers met de de customerDetails-rol kunnen data uit deze API uitlezen.
+ 11. `/api/customerDetails/register`
+    * Alleen (ingelogd) gebruikers met de customerDetails-rol kunnen data uit deze API uitlezen.     
+ 12. `/api/customerDetails/upload/customerid/{id}`
+     * Alleen (ingelogd) gebruikers met de customerDetails-rol kunnen data uit deze API uitlezen.
+ 13. `/api/customerDetails/download/customerid/{id}`
+    * Alleen (ingelogd) gebruikers met de customerDetails-rol kunnen data uit deze API uitlezen.    
+ 14. `/api/customerDetails/address/customer_lastname/{lastname}`
     * Alleen (ingelogd) gebruikers met de operator-rol kunnen data uit deze API uitlezen.
 #OPERATOR
- 15. `/api/operator/customer/list`
+ 15. `/api/operator/customerDetails/list`
      * Alleen (ingelogd) gebruikers met de operator-rol kunnen data uit deze API uitlezen.
- 16. `/api/operator/customer/lastname/{lastname}`
+ 16. `/api/operator/customerDetails/lastname/{lastname}`
      * Alleen (ingelogd) gebruikers met de operator-rol kunnen data uit deze API uitlezen.
- 17. `/api/operator/customer/id/{id}`
+ 17. `/api/operator/customerDetails/id/{id}`
     * Alleen (ingelogd) gebruikers met de operator-rol kunnen data uit deze API uitlezen. 
- 18. `/api/customer/order/list`
+ 18. `/api/customerDetails/order/list`
      * Alleen (ingelogd) gebruikers met de operator-rol kunnen data uit deze API uitlezen.
- 19. `/api/customer/product/list`
+ 19. `/api/customerDetails/product/list`
      * Alleen (ingelogd) gebruikers met de tailor-rol kunnen data uit deze API uitlezen.
- 20. `/api/customer/addressbystreetandhousenumber/list`
+ 20. `/api/customerDetails/addressbystreetandhousenumber/list`
     * Alleen (ingelogd) gebruikers met de tailor-rol kunnen data uit deze API uitlezen.   
 #ORDER
  21. `/api/order/list`
@@ -100,7 +100,7 @@ Je kunt tegen de hierboven genoemde rest-points communiceren.
 ### Gebruiker aanmaken
 Praat via Postman met de volgende link: `http://localhost:8080/api/auth/signup` en geef de volgende JSON in de body mee:
 
-#### Gebruiker aanmaken, rol wordt automatisch customer
+#### Gebruiker aanmaken, rol wordt automatisch customerDetails
 ```json
 {
     "username": "user",
@@ -108,7 +108,7 @@ Praat via Postman met de volgende link: `http://localhost:8080/api/auth/signup` 
     "password" : "password"
 }
 ```
-### Register: Extra informatie van de klant/customer opgeven
+### Register: Extra informatie van de klant/customerDetails opgeven
 ````json
 {
 "firstName": "Tjerk",
@@ -174,8 +174,8 @@ De volgende resultaten worden teruggegevn door de server, wanneer het succesvol 
  3. `/api/test/admin`
      * Alleen (ingelogd) gebruikers met de admin-rol kunnen data uit deze API uitlezen.
      `Admin Board.`
- 4. `/api/test/customer`
-     * Alleen (ingelogd) gebruikers met de customer-rol kunnen data uit deze API uitlezen.
+ 4. `/api/test/customerDetails`
+     * Alleen (ingelogd) gebruikers met de customerDetails-rol kunnen data uit deze API uitlezen.
      `Customer Board.`
  5. `/api/test/tailor`
     * Alleen (ingelogd) gebruikers met de tailor-rol kunnen data uit deze API uitlezen.
@@ -196,7 +196,7 @@ objecten) en een response (antwoord-objecten) package.
 Hier vind je `SignupRequest.java` en `LoginRequest.java`en `RegisterUserRequest`. 
 De eerste klasse is het object dat binnenkomt om een gebruiker te registreren. 
 Het tweede object is het object dat binnenkomt om de login af te handelen. De laatste is om extra informatie over de
-klant/customer te vullen. 
+klant/customerDetails te vullen. 
 
 ### De Json code in Postman
 In de root van het project staat het volgende bestand: Tailorism.postman_collection.json dit bestand kun je importeren 

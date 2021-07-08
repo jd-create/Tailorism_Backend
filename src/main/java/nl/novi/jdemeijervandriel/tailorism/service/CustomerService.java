@@ -1,7 +1,7 @@
 package nl.novi.jdemeijervandriel.tailorism.service;
 
 import nl.novi.jdemeijervandriel.tailorism.domain.Address;
-import nl.novi.jdemeijervandriel.tailorism.domain.Customer;
+import nl.novi.jdemeijervandriel.tailorism.domain.CustomerDetails;
 import nl.novi.jdemeijervandriel.tailorism.domain.CustomerBuilder;
 import nl.novi.jdemeijervandriel.tailorism.exception.DatabaseErrorException;
 import nl.novi.jdemeijervandriel.tailorism.exception.RecordNotFoundException;
@@ -22,17 +22,17 @@ public class CustomerService {
     @Autowired
     AddressRepository addressRepository;
 
-    public List<Customer> getAllCustomers()
+    public List<CustomerDetails> getAllCustomers()
     {
-        List<Customer> customers = customerRepository.findAll();
-            return customers;
+        List<CustomerDetails> customerDetails = customerRepository.findAll();
+            return customerDetails;
     }
 
-    public Customer getCustomerById(long id){
+    public CustomerDetails getCustomerById(long id){
         if(customerRepository.existsById(id)){
-            Customer customer = customerRepository.findById(id).orElse(null);
+            CustomerDetails customerDetails = customerRepository.findById(id).orElse(null);
 
-            return customer;
+            return customerDetails;
         }else {
             throw new RecordNotFoundException();
         }
@@ -47,23 +47,23 @@ public class CustomerService {
     }
 
     public long saveCustomer (RegisterUserRequest registerUserRequest){
-        Customer customer = new CustomerBuilder(registerUserRequest).buildCustomer();
+        CustomerDetails customerDetails = new CustomerBuilder(registerUserRequest).buildCustomer();
         Address address = new CustomerBuilder (registerUserRequest)
                 .buildAddress();
 
         Address savedAddress = addressRepository.save(address);
-        customer.setAddress(savedAddress);
-        address.setCustomer(customer);
+        customerDetails.setAddress(savedAddress);
+        address.setCustomer(customerDetails);
 
-        return customerRepository.save(customer).getId();
+        return customerRepository.save(customerDetails).getId();
     }
 
-    public void updateCustomer(long id, Customer customer) {
+    public void updateCustomer(long id, CustomerDetails customerDetails) {
         if(customerRepository.existsById(id)){
             try {
-                Customer existingClient = customerRepository.findById(id).orElse(null);
-                existingClient.setFirstName(customer.getFirstName());
-                existingClient.setLastName(customer.getLastName());
+                CustomerDetails existingClient = customerRepository.findById(id).orElse(null);
+                existingClient.setFirstName(customerDetails.getFirstName());
+                existingClient.setLastName(customerDetails.getLastName());
                 customerRepository.save(existingClient);
             } catch (Exception e){
                 throw new DatabaseErrorException();
@@ -74,9 +74,9 @@ public class CustomerService {
     }
 
 
-    public Customer getCustomerByLastName(String lastName) {
-        Customer customer = customerRepository.findByLastNameIgnoreCase(lastName);
-        return customer;
+    public CustomerDetails getCustomerByLastName(String lastName) {
+        CustomerDetails customerDetails = customerRepository.findByLastNameIgnoreCase(lastName);
+        return customerDetails;
     }
 
 

@@ -17,7 +17,7 @@ public class File {
     @JsonIgnore
     @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "customer_id", referencedColumnName = "id")
-    private Customer customer;
+    private CustomerDetails customerDetails;
 
     @JsonIgnore
     @Lob
@@ -58,12 +58,12 @@ public class File {
         this.type = type;
     }
 
-    public Customer getCustomer() {
-        return customer;
+    public CustomerDetails getCustomer() {
+        return customerDetails;
     }
 
-    public void setCustomer(Customer customer) {
-        this.customer = customer;
+    public void setCustomer(CustomerDetails customerDetails) {
+        this.customerDetails = customerDetails;
     }
 
     public byte[] getData() {

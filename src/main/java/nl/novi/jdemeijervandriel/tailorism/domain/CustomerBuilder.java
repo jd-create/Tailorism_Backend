@@ -24,8 +24,8 @@ public class CustomerBuilder {
         this.city = registerUserRequest.getCity();
     }
 
-    public Customer buildCustomer(){
-        return new Customer (firstName, lastName,telephoneNumber, bankAccount);
+    public CustomerDetails buildCustomer(){
+        return new CustomerDetails(firstName, lastName,telephoneNumber, bankAccount);
     }
 
     public Address buildAddress(){

@@ -20,7 +20,7 @@ public class Address {
     @JsonIgnore
     @OneToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL,orphanRemoval = true)
     @JoinColumn(name ="id")
-    private Customer customer;
+    private CustomerDetails customerDetails;
 
 
     public Address(){}
@@ -72,6 +72,6 @@ public class Address {
         this.city = city;
     }
 
-    public void setCustomer(Customer customer) {
+    public void setCustomer(CustomerDetails customerDetails) {
     }
 }

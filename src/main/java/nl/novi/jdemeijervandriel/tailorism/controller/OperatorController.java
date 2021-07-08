@@ -4,8 +4,6 @@ import nl.novi.jdemeijervandriel.tailorism.domain.*;
 import nl.novi.jdemeijervandriel.tailorism.payload.AddressRequest;
 import nl.novi.jdemeijervandriel.tailorism.repository.AddressRepository;
 import nl.novi.jdemeijervandriel.tailorism.repository.CustomerRepository;
-import nl.novi.jdemeijervandriel.tailorism.repository.RoleRepository;
-import nl.novi.jdemeijervandriel.tailorism.repository.UserRepository;
 import nl.novi.jdemeijervandriel.tailorism.service.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -35,20 +33,20 @@ public class OperatorController {
 
     @GetMapping(value = "/customer/list")
     public ResponseEntity<Object> getCustomers(){
-        List<Customer> customers = customerService.getAllCustomers();
-        return new ResponseEntity<>(customers, HttpStatus.OK);
+        List<CustomerDetails> customerDetails = customerService.getAllCustomers();
+        return new ResponseEntity<>(customerDetails, HttpStatus.OK);
     }
 
     @GetMapping(value = "/customer/lastname/{lastname}")
     public ResponseEntity<Object> getCustomerByLastName(@PathVariable("lastname") String lastname){
-        Customer customer = customerService.getCustomerByLastName(lastname);
-        return new ResponseEntity<>(customer, HttpStatus.OK);
+        CustomerDetails customerDetails = customerService.getCustomerByLastName(lastname);
+        return new ResponseEntity<>(customerDetails, HttpStatus.OK);
     }
 
     @GetMapping(value = "/customer/id/{id}")
     public ResponseEntity<Object> getCustomer(@PathVariable("id") long id){
-        Customer customer = customerService.getCustomerById(id);
-        return new ResponseEntity<>(customer, HttpStatus.OK);
+        CustomerDetails customerDetails = customerService.getCustomerById(id);
+        return new ResponseEntity<>(customerDetails, HttpStatus.OK);
     }
 
     @GetMapping(value = "/order/list")

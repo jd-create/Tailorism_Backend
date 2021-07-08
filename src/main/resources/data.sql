@@ -18,7 +18,7 @@ INSERT INTO role(name) VALUES('ROLE_OPERATOR');
 
 INSERT INTO app_user(username,email,password) VALUES ( 'user','user@mail.nl','$2a$10$44azppeekabMTwZZ1vtq4OWr/SboMJh4KxUOepB8EFkEJH6gbfeQq');
 INSERT INTO app_user(username,email,password) VALUES ( 'admin','admin@mail.nl','$2a$10$44azppeekabMTwZZ1vtq4OWr/SboMJh4KxUOepB8EFkEJH6gbfeQq');
-INSERT INTO app_user(username,email,password) VALUES ( 'customer','customer@mail.nl','$2a$10$44azppeekabMTwZZ1vtq4OWr/SboMJh4KxUOepB8EFkEJH6gbfeQq');
+INSERT INTO app_user(username,email,password) VALUES ( 'customerDetails','customerDetails@mail.nl','$2a$10$44azppeekabMTwZZ1vtq4OWr/SboMJh4KxUOepB8EFkEJH6gbfeQq');
 INSERT INTO app_user(username,email,password) VALUES ( 'tailor','tailor@mail.nl','$2a$10$44azppeekabMTwZZ1vtq4OWr/SboMJh4KxUOepB8EFkEJH6gbfeQq');
 INSERT INTO app_user(username,email,password) VALUES ( 'operator','operator@mail.nl','$2a$10$44azppeekabMTwZZ1vtq4OWr/SboMJh4KxUOepB8EFkEJH6gbfeQq');
 
