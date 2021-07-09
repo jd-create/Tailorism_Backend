@@ -34,7 +34,9 @@ public class CustomerDetails {
     private Address address;
 
 
-    @OneToOne(fetch = FetchType.LAZY)
+    @OneToOne(fetch = FetchType.LAZY,
+            cascade = CascadeType.ALL,
+            orphanRemoval  = true)
     @JoinColumn(name = "app_user_id")
     private User users;
 
@@ -116,5 +118,13 @@ public class CustomerDetails {
 
     public void setFile(File file) {
         this.file = file;
+    }
+
+    public User getUsers() {
+        return users;
+    }
+
+    public void setUsers(User users) {
+        this.users = users;
     }
 }

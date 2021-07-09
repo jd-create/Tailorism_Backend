@@ -24,17 +24,19 @@ INSERT INTO app_user(username,email,password) VALUES ( 'operator','operator@mail
 INSERT INTO app_user(username,email,password) VALUES ( 'customer2','customer2@mail.nl','$2a$10$44azppeekabMTwZZ1vtq4OWr/SboMJh4KxUOepB8EFkEJH6gbfeQq');
 INSERT INTO app_user(username,email,password) VALUES ( 'customer3','customer3@mail.nl','$2a$10$44azppeekabMTwZZ1vtq4OWr/SboMJh4KxUOepB8EFkEJH6gbfeQq');
 INSERT INTO app_user(username,email,password) VALUES ( 'customer4','customer4@mail.nl','$2a$10$44azppeekabMTwZZ1vtq4OWr/SboMJh4KxUOepB8EFkEJH6gbfeQq');
+INSERT INTO app_user(username,email,password) VALUES ( 'customer5','customer5@mail.nl','$2a$10$44azppeekabMTwZZ1vtq4OWr/SboMJh4KxUOepB8EFkEJH6gbfeQq');
 
-INSERT INTO address(street, house_number, postcode, city) VALUES ( 'hoofdstraat', '1', '1234AA', 'Bergen');
-INSERT INTO address(street, house_number, postcode, city) VALUES ( 'dwarsstraat', '15', '1234AA', 'Bunnik');
-INSERT INTO address(street, house_number, postcode, city) VALUES ( 'havenweg', '5', '1234AA', 'Batenburg');
-INSERT INTO address(street, house_number, postcode, city) VALUES ( 'beukenlaan', '20', '1234AA', 'hoofdstad');
-INSERT INTO address(street, house_number, postcode, city) VALUES ( 'kastanjelaan', '21', '1234AA', 'hoofdstad');
+INSERT INTO address(street, house_number, postcode, city,id) VALUES ( 'hoofdstraat', '1', '1234AA', 'Bergen',1);
+INSERT INTO address(street, house_number, postcode, city,id) VALUES ( 'dwarsstraat', '15', '1234AA', 'Bunnik',2);
+INSERT INTO address(street, house_number, postcode, city,id) VALUES ( 'havenweg', '5', '1234AA', 'Batenburg',3);
+INSERT INTO address(street, house_number, postcode, city,id) VALUES ( 'beukenlaan', '20', '1234AA', 'hoofdstad',4);
+INSERT INTO address(street, house_number, postcode, city,id) VALUES ( 'kastanjelaan', '21', '1234AA', 'hoofdstad',5);
 
 INSERT INTO customerdetails(first_Name,last_Name, telephone_Number, bank_Account, app_user_id) VALUES ( 'Jopie', 'Joviaal', '0612345678', 'BANK123456',3);
 INSERT INTO customerdetails(first_Name,last_Name, telephone_Number, bank_Account, app_user_id) VALUES ( 'Truus', 'Truien', '0612345678', 'BANK123456',6);
 INSERT INTO customerdetails(first_Name,last_Name, telephone_Number, bank_Account, app_user_id) VALUES ( 'Kees', 'Kapper', '0612345678', 'BANK123456',7);
 INSERT INTO customerdetails(first_Name,last_Name, telephone_Number, bank_Account, app_user_id) VALUES ( 'Mark', 'Nevel', '0612345678', 'BANK123456',8);
+INSERT INTO customerdetails(first_Name,last_Name, telephone_Number, bank_Account, app_user_id) VALUES ( 'Marga', 'Nevel', '0612345678', 'BANK123456',9);
 
 INSERT INTO user_role(user_id, role_id) VALUES ( 1, 1 );
 INSERT INTO user_role(user_id, role_id) VALUES ( 2, 2 );

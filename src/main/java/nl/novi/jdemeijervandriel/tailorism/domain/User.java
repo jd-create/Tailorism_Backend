@@ -76,4 +76,11 @@ public class User {
     }
 
 
+    public CustomerDetails getCustomerDetails() {
+        return customerDetails;
+    }
+
+    public void setCustomerDetails(CustomerDetails customerDetails) {
+        this.customerDetails = customerDetails;
+    }
 }
