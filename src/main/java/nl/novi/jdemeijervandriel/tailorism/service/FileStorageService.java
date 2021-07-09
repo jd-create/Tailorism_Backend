@@ -4,7 +4,7 @@ package nl.novi.jdemeijervandriel.tailorism.service;
 import nl.novi.jdemeijervandriel.tailorism.domain.CustomerDetails;
 import nl.novi.jdemeijervandriel.tailorism.domain.File;
 import nl.novi.jdemeijervandriel.tailorism.exception.RecordNotFoundException;
-import nl.novi.jdemeijervandriel.tailorism.repository.CustomerRepository;
+import nl.novi.jdemeijervandriel.tailorism.repository.CustomerDetailsRepository;
 import nl.novi.jdemeijervandriel.tailorism.repository.FileRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -20,7 +20,7 @@ public class FileStorageService {
     private FileRepository fileRepository;
 
     @Autowired
-    private CustomerRepository customerRepository;
+    private CustomerDetailsRepository customerDetailsRepository;
 
     public File store(MultipartFile file, long id) throws IOException{
 
@@ -28,8 +28,8 @@ public class FileStorageService {
         File file1 = new File(fileName, file.getContentType(), file.getBytes());
 
         CustomerDetails customerDetails = null;
-        if (customerRepository.existsById((id))) {
-            customerDetails = customerRepository.findById(id).orElse(null);
+        if (customerDetailsRepository.existsById((id))) {
+            customerDetails = customerDetailsRepository.findById(id).orElse(null);
         }
         file1.setCustomer(customerDetails);
 

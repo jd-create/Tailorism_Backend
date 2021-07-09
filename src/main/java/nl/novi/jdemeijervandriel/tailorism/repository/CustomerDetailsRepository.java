@@ -5,7 +5,7 @@ import org.springframework.data.jpa.repository.JpaRepository;
 
 
 
-public interface CustomerRepository extends JpaRepository<CustomerDetails, Long> {
+public interface CustomerDetailsRepository extends JpaRepository<CustomerDetails, Long> {
 
     public CustomerDetails findByLastNameIgnoreCase(String lastName);
 }

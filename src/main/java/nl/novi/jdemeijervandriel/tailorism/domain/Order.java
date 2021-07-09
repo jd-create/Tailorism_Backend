@@ -23,7 +23,7 @@ public class Order {
     private Set<Product> productSet;
 
     @ManyToOne
-    @JoinColumn(name = "customer_id", referencedColumnName = "id")
+    @JoinColumn(name = "customerdetails_id", referencedColumnName = "id")
     private CustomerDetails customerDetails;
 
 

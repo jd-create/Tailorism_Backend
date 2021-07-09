@@ -6,7 +6,7 @@ import nl.novi.jdemeijervandriel.tailorism.domain.File;
 import nl.novi.jdemeijervandriel.tailorism.payload.RegisterUserRequest;
 import nl.novi.jdemeijervandriel.tailorism.payload.response.ResponseMessage;
 import nl.novi.jdemeijervandriel.tailorism.repository.AddressRepository;
-import nl.novi.jdemeijervandriel.tailorism.service.CustomerService;
+import nl.novi.jdemeijervandriel.tailorism.service.CustomerDetailsService;
 import nl.novi.jdemeijervandriel.tailorism.service.FileStorageService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpHeaders;
@@ -22,7 +22,7 @@ import java.util.Optional;
 public class CustomerController {
 
     @Autowired
-    private CustomerService customerService;
+    private CustomerDetailsService customerDetailsService;
 
     @Autowired
     private AddressRepository addressRepository;
@@ -32,32 +32,32 @@ public class CustomerController {
 
     @GetMapping(value = "/id/{id}")
     public ResponseEntity<Object> getCustomer(@PathVariable("id") long id){
-        CustomerDetails customerDetails = customerService.getCustomerById(id);
+        CustomerDetails customerDetails = customerDetailsService.getCustomerById(id);
         return new ResponseEntity<>(customerDetails, HttpStatus.OK);
     }
 
     @GetMapping(value = "/lastname/{lastname}")
     public ResponseEntity<Object> getCustomerByLastName(@PathVariable("lastname") String lastname){
-        CustomerDetails customerDetails = customerService.getCustomerByLastName(lastname);
+        CustomerDetails customerDetails = customerDetailsService.getCustomerByLastName(lastname);
         return new ResponseEntity<>(customerDetails, HttpStatus.OK);
     }
 
     @PostMapping(value = "/register")
     public ResponseEntity<Object> saveCustomer(@RequestBody RegisterUserRequest registerUserRequest){
-        long newId = customerService.saveCustomer(registerUserRequest);
+        long newId = customerDetailsService.saveCustomer(registerUserRequest);
         return new ResponseEntity<>(newId, HttpStatus.CREATED);
     }
 
     @DeleteMapping(value = "/id/{id}")
     public ResponseEntity<Object> deleteCustomer(@PathVariable("id") long id){
-        customerService.deleteCustomer(id);
+        customerDetailsService.deleteCustomer(id);
         return new ResponseEntity<>("Client with ID " + id + "deleted.", HttpStatus.NO_CONTENT);
     }
 
     @PutMapping(value = "/id/{id}")
     public ResponseEntity<Object> updateCustomer(@PathVariable("id") long id, @RequestBody CustomerDetails customerDetails)
     {
-        customerService.updateCustomer(id, customerDetails);
+        customerDetailsService.updateCustomer(id, customerDetails);
         return new ResponseEntity<>(customerDetails, HttpStatus.OK);
     }
 

@@ -16,7 +16,7 @@ public class File {
 
     @JsonIgnore
     @OneToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "customer_id", referencedColumnName = "id")
+    @JoinColumn(name = "customerdetails_id", referencedColumnName = "id")
     private CustomerDetails customerDetails;
 
     @JsonIgnore

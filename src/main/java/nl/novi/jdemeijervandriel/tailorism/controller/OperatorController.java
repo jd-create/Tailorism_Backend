@@ -3,7 +3,7 @@ package nl.novi.jdemeijervandriel.tailorism.controller;
 import nl.novi.jdemeijervandriel.tailorism.domain.*;
 import nl.novi.jdemeijervandriel.tailorism.payload.AddressRequest;
 import nl.novi.jdemeijervandriel.tailorism.repository.AddressRepository;
-import nl.novi.jdemeijervandriel.tailorism.repository.CustomerRepository;
+import nl.novi.jdemeijervandriel.tailorism.repository.CustomerDetailsRepository;
 import nl.novi.jdemeijervandriel.tailorism.service.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -17,10 +17,10 @@ import java.util.List;
 public class OperatorController {
 
     @Autowired
-    private CustomerRepository customerRepository;
+    private CustomerDetailsRepository customerDetailsRepository;
 
     @Autowired
-    private CustomerService customerService;
+    private CustomerDetailsService customerDetailsService;
 
     @Autowired
     private OrderService orderService;
@@ -33,19 +33,19 @@ public class OperatorController {
 
     @GetMapping(value = "/customer/list")
     public ResponseEntity<Object> getCustomers(){
-        List<CustomerDetails> customerDetails = customerService.getAllCustomers();
+        List<CustomerDetails> customerDetails = customerDetailsService.getAllCustomers();
         return new ResponseEntity<>(customerDetails, HttpStatus.OK);
     }
 
     @GetMapping(value = "/customer/lastname/{lastname}")
     public ResponseEntity<Object> getCustomerByLastName(@PathVariable("lastname") String lastname){
-        CustomerDetails customerDetails = customerService.getCustomerByLastName(lastname);
+        CustomerDetails customerDetails = customerDetailsService.getCustomerByLastName(lastname);
         return new ResponseEntity<>(customerDetails, HttpStatus.OK);
     }
 
     @GetMapping(value = "/customer/id/{id}")
     public ResponseEntity<Object> getCustomer(@PathVariable("id") long id){
-        CustomerDetails customerDetails = customerService.getCustomerById(id);
+        CustomerDetails customerDetails = customerDetailsService.getCustomerById(id);
         return new ResponseEntity<>(customerDetails, HttpStatus.OK);
     }
 

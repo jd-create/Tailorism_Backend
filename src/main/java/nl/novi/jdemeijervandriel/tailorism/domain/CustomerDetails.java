@@ -7,6 +7,7 @@ import java.util.Set;
 @Entity
 @Table(name = "customerdetails")
 public class CustomerDetails {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
@@ -28,12 +29,18 @@ public class CustomerDetails {
     @OneToOne(mappedBy = "customerDetails")
     private File file;
 
-    @OneToOne(fetch = FetchType.LAZY,mappedBy = "customerDetails")
+    @OneToOne(fetch = FetchType.LAZY,
+            mappedBy = "customerDetails")
     private Address address;
+
+
+    @OneToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "app_user_id")
+    private User users;
+
 
     @OneToMany(fetch = FetchType.LAZY,
             mappedBy = "customerDetails",
-            cascade = CascadeType.ALL,
             orphanRemoval = true)
     private Set<Order> orders;
 

@@ -7,30 +7,30 @@ import nl.novi.jdemeijervandriel.tailorism.exception.DatabaseErrorException;
 import nl.novi.jdemeijervandriel.tailorism.exception.RecordNotFoundException;
 import nl.novi.jdemeijervandriel.tailorism.payload.RegisterUserRequest;
 import nl.novi.jdemeijervandriel.tailorism.repository.AddressRepository;
-import nl.novi.jdemeijervandriel.tailorism.repository.CustomerRepository;
+import nl.novi.jdemeijervandriel.tailorism.repository.CustomerDetailsRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 
 @Service
-public class CustomerService {
+public class CustomerDetailsService {
 
     @Autowired
-    CustomerRepository customerRepository;
+    CustomerDetailsRepository customerDetailsRepository;
 
     @Autowired
     AddressRepository addressRepository;
 
     public List<CustomerDetails> getAllCustomers()
     {
-        List<CustomerDetails> customerDetails = customerRepository.findAll();
+        List<CustomerDetails> customerDetails = customerDetailsRepository.findAll();
             return customerDetails;
     }
 
     public CustomerDetails getCustomerById(long id){
-        if(customerRepository.existsById(id)){
-            CustomerDetails customerDetails = customerRepository.findById(id).orElse(null);
+        if(customerDetailsRepository.existsById(id)){
+            CustomerDetails customerDetails = customerDetailsRepository.findById(id).orElse(null);
 
             return customerDetails;
         }else {
@@ -39,8 +39,8 @@ public class CustomerService {
     }
 
     public void deleteCustomer(long id) {
-        if (customerRepository.existsById(id)){
-            customerRepository.deleteById(id);
+        if (customerDetailsRepository.existsById(id)){
+            customerDetailsRepository.deleteById(id);
         } else {
             throw new RecordNotFoundException();
         }
@@ -55,16 +55,16 @@ public class CustomerService {
         customerDetails.setAddress(savedAddress);
         address.setCustomer(customerDetails);
 
-        return customerRepository.save(customerDetails).getId();
+        return customerDetailsRepository.save(customerDetails).getId();
     }
 
     public void updateCustomer(long id, CustomerDetails customerDetails) {
-        if(customerRepository.existsById(id)){
+        if(customerDetailsRepository.existsById(id)){
             try {
-                CustomerDetails existingClient = customerRepository.findById(id).orElse(null);
+                CustomerDetails existingClient = customerDetailsRepository.findById(id).orElse(null);
                 existingClient.setFirstName(customerDetails.getFirstName());
                 existingClient.setLastName(customerDetails.getLastName());
-                customerRepository.save(existingClient);
+                customerDetailsRepository.save(existingClient);
             } catch (Exception e){
                 throw new DatabaseErrorException();
             }
@@ -75,7 +75,7 @@ public class CustomerService {
 
 
     public CustomerDetails getCustomerByLastName(String lastName) {
-        CustomerDetails customerDetails = customerRepository.findByLastNameIgnoreCase(lastName);
+        CustomerDetails customerDetails = customerDetailsRepository.findByLastNameIgnoreCase(lastName);
         return customerDetails;
     }
 

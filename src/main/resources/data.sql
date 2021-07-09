@@ -18,9 +18,12 @@ INSERT INTO role(name) VALUES('ROLE_OPERATOR');
 
 INSERT INTO app_user(username,email,password) VALUES ( 'user','user@mail.nl','$2a$10$44azppeekabMTwZZ1vtq4OWr/SboMJh4KxUOepB8EFkEJH6gbfeQq');
 INSERT INTO app_user(username,email,password) VALUES ( 'admin','admin@mail.nl','$2a$10$44azppeekabMTwZZ1vtq4OWr/SboMJh4KxUOepB8EFkEJH6gbfeQq');
-INSERT INTO app_user(username,email,password) VALUES ( 'customerDetails','customerDetails@mail.nl','$2a$10$44azppeekabMTwZZ1vtq4OWr/SboMJh4KxUOepB8EFkEJH6gbfeQq');
+INSERT INTO app_user(username,email,password) VALUES ( 'customer1','customer1@mail.nl','$2a$10$44azppeekabMTwZZ1vtq4OWr/SboMJh4KxUOepB8EFkEJH6gbfeQq');
 INSERT INTO app_user(username,email,password) VALUES ( 'tailor','tailor@mail.nl','$2a$10$44azppeekabMTwZZ1vtq4OWr/SboMJh4KxUOepB8EFkEJH6gbfeQq');
 INSERT INTO app_user(username,email,password) VALUES ( 'operator','operator@mail.nl','$2a$10$44azppeekabMTwZZ1vtq4OWr/SboMJh4KxUOepB8EFkEJH6gbfeQq');
+INSERT INTO app_user(username,email,password) VALUES ( 'customer2','customer2@mail.nl','$2a$10$44azppeekabMTwZZ1vtq4OWr/SboMJh4KxUOepB8EFkEJH6gbfeQq');
+INSERT INTO app_user(username,email,password) VALUES ( 'customer3','customer3@mail.nl','$2a$10$44azppeekabMTwZZ1vtq4OWr/SboMJh4KxUOepB8EFkEJH6gbfeQq');
+INSERT INTO app_user(username,email,password) VALUES ( 'customer4','customer4@mail.nl','$2a$10$44azppeekabMTwZZ1vtq4OWr/SboMJh4KxUOepB8EFkEJH6gbfeQq');
 
 INSERT INTO address(street, house_number, postcode, city) VALUES ( 'hoofdstraat', '1', '1234AA', 'Bergen');
 INSERT INTO address(street, house_number, postcode, city) VALUES ( 'dwarsstraat', '15', '1234AA', 'Bunnik');
@@ -28,10 +31,10 @@ INSERT INTO address(street, house_number, postcode, city) VALUES ( 'havenweg', '
 INSERT INTO address(street, house_number, postcode, city) VALUES ( 'beukenlaan', '20', '1234AA', 'hoofdstad');
 INSERT INTO address(street, house_number, postcode, city) VALUES ( 'kastanjelaan', '21', '1234AA', 'hoofdstad');
 
-INSERT INTO customerdetails(first_Name,last_Name, telephone_Number, bank_Account) VALUES ( 'Jopie', 'Joviaal', '0612345678', 'BANK123456');
-INSERT INTO customerdetails(first_Name,last_Name, telephone_Number, bank_Account) VALUES ( 'Truus', 'Truien', '0612345678', 'BANK123456');
-INSERT INTO customerdetails(first_Name,last_Name, telephone_Number, bank_Account) VALUES ( 'Kees', 'Kapper', '0612345678', 'BANK123456');
-INSERT INTO customerdetails(first_Name,last_Name, telephone_Number, bank_Account) VALUES ( 'Mark', 'Nevel', '0612345678', 'BANK123456');
+INSERT INTO customerdetails(first_Name,last_Name, telephone_Number, bank_Account, app_user_id) VALUES ( 'Jopie', 'Joviaal', '0612345678', 'BANK123456',3);
+INSERT INTO customerdetails(first_Name,last_Name, telephone_Number, bank_Account, app_user_id) VALUES ( 'Truus', 'Truien', '0612345678', 'BANK123456',6);
+INSERT INTO customerdetails(first_Name,last_Name, telephone_Number, bank_Account, app_user_id) VALUES ( 'Kees', 'Kapper', '0612345678', 'BANK123456',7);
+INSERT INTO customerdetails(first_Name,last_Name, telephone_Number, bank_Account, app_user_id) VALUES ( 'Mark', 'Nevel', '0612345678', 'BANK123456',8);
 
 INSERT INTO user_role(user_id, role_id) VALUES ( 1, 1 );
 INSERT INTO user_role(user_id, role_id) VALUES ( 2, 2 );
@@ -46,10 +49,10 @@ INSERT INTO product(product_type,description, product_name, price, storage_locat
 INSERT INTO product(product_type,description, product_name, price, storage_location, end_time, start_time, status)VALUES (2, 'Jasverlenging' , 'KL2546804', '51.00',null, '202102171500', '202102171100',3);
 INSERT INTO product(product_type,description, product_name, price, storage_location, end_time, start_time, status)VALUES (1, 'Hydrofielstof uni bordeaux 200 centimeter' , 'NB3001018', '15.60', 'Z120AS', null, null,4);
 
-INSERT INTO api_order(time_of_order,customer_id)VALUES ('het moment dat deze order is aangemaakt',1);
-INSERT INTO api_order(time_of_order,customer_id)VALUES ('het moment dat deze order is aangemaakt',2);
-INSERT INTO api_order(time_of_order,customer_id)VALUES ('het moment dat deze order is aangemaakt',3);
-INSERT INTO api_order(time_of_order,customer_id)VALUES ('het moment dat deze order is aangemaakt',4);
+INSERT INTO api_order(time_of_order,order_id)VALUES ('het moment dat deze order is aangemaakt',1);
+INSERT INTO api_order(time_of_order,order_id)VALUES ('het moment dat deze order is aangemaakt',2);
+INSERT INTO api_order(time_of_order,order_id)VALUES ('het moment dat deze order is aangemaakt',3);
+INSERT INTO api_order(time_of_order,order_id)VALUES ('het moment dat deze order is aangemaakt',4);
 
 INSERT INTO order_product(order_id, product_id) VALUES ( 1,1);
 INSERT INTO order_product(order_id, product_id) VALUES ( 2,2);

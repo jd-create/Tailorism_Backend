@@ -1,14 +1,6 @@
 package nl.novi.jdemeijervandriel.tailorism.domain;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.JoinTable;
-import javax.persistence.ManyToMany;
-import javax.persistence.Table;
+import javax.persistence.*;
 import java.util.Set;
 
 @Entity
@@ -24,6 +16,8 @@ public class User {
     private String email;
     private String password;
 
+    @OneToOne(fetch = FetchType.LAZY)
+    private CustomerDetails customerDetails;
 
     @ManyToMany
     @JoinTable (name = "user_role",
@@ -80,4 +74,6 @@ public class User {
     public void setRoles(Set<Role> roles) {
         this.roles = roles;
     }
+
+
 }
