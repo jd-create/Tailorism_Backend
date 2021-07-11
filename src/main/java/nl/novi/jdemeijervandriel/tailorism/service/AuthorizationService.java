@@ -5,6 +5,7 @@ import nl.novi.jdemeijervandriel.tailorism.domain.Role;
 import nl.novi.jdemeijervandriel.tailorism.domain.User;
 import nl.novi.jdemeijervandriel.tailorism.payload.LoginRequest;
 import nl.novi.jdemeijervandriel.tailorism.payload.SignupRequest;
+import nl.novi.jdemeijervandriel.tailorism.payload.UserDataRequest;
 import nl.novi.jdemeijervandriel.tailorism.payload.response.JwtResponse;
 import nl.novi.jdemeijervandriel.tailorism.payload.response.MessageResponse;
 import nl.novi.jdemeijervandriel.tailorism.repository.RoleRepository;
@@ -23,6 +24,7 @@ import org.springframework.validation.annotation.Validated;
 import javax.validation.Valid;
 import java.util.HashSet;
 import java.util.List;
+import java.util.Optional;
 import java.util.Set;
 import java.util.stream.Collectors;
 
@@ -165,6 +167,11 @@ public class AuthorizationService {
                 userDetails.getEmail(),
                 roles));
 
+    }
+
+    public ResponseEntity<Object> getUserByUsername(String username) {
+        Optional<User> user = userRepository.findByUsername(username);
+        return ResponseEntity.ok(user);
     }
 
 }

@@ -3,6 +3,7 @@ package nl.novi.jdemeijervandriel.tailorism.controller;
 import nl.novi.jdemeijervandriel.tailorism.domain.User;
 import nl.novi.jdemeijervandriel.tailorism.payload.LoginRequest;
 import nl.novi.jdemeijervandriel.tailorism.payload.SignupRequest;
+import nl.novi.jdemeijervandriel.tailorism.payload.UserDataRequest;
 import nl.novi.jdemeijervandriel.tailorism.payload.response.JwtResponse;
 import nl.novi.jdemeijervandriel.tailorism.payload.response.MessageResponse;
 import nl.novi.jdemeijervandriel.tailorism.service.AuthorizationService;
@@ -39,11 +40,20 @@ public class AuthController {
     //Deze request wordt gebruikt in de Frontend in de functie GetUserData omdat
     // uit de Token alleen de username te halen is en we naar een reset nog steeds ingelogd willen blijven
 
+    @GetMapping(value = "/600/user/{username}")
+    public ResponseEntity<Object> getUser(@PathVariable("username")String username){
+
+        ResponseEntity<Object> user = authorizationService.getUserByUsername(username);
+        System.out.println("getUser");
+                return new ResponseEntity<>(user, HttpStatus.OK);
+    }
+
+    //onderstaand is het origineel van bovenstaand
 //    @GetMapping(value = "/600/user/{username}")
 //    public ResponseEntity<Object> getUser(@PathVariable("username") String username){
 //        User user = (User) userDetails.loadUserByUsername(username);
 //        System.out.println("getUser");
-//                return new ResponseEntity<>(user, HttpStatus.OK);
+//        return new ResponseEntity<>(user, HttpStatus.OK);
 //    }
 
 }
