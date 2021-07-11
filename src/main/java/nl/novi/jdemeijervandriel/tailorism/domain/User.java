@@ -16,7 +16,8 @@ public class User {
     private String email;
     private String password;
 
-    @OneToOne(fetch = FetchType.LAZY)
+    @OneToOne(fetch = FetchType.LAZY,
+    mappedBy = "users")
     private CustomerDetails customerDetails;
 
     @ManyToMany

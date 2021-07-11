@@ -39,7 +39,7 @@ public class CustomerDetails {
             orphanRemoval  = true)
     @JoinColumn(name = "app_user_id")
     private User users;
-
+//hierboven zo enkelvoud maken en dan checken
 
     @OneToMany(fetch = FetchType.LAZY,
             mappedBy = "customerDetails",
