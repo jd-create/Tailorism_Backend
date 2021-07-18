@@ -1,5 +1,6 @@
 package nl.novi.jdemeijervandriel.tailorism.controller;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import nl.novi.jdemeijervandriel.tailorism.domain.User;
 import nl.novi.jdemeijervandriel.tailorism.payload.LoginRequest;
 import nl.novi.jdemeijervandriel.tailorism.payload.SignupRequest;
@@ -39,7 +40,7 @@ public class AuthController {
 
     //Deze request wordt gebruikt in de Frontend in de functie GetUserData omdat
     // uit de Token alleen de username te halen is en we naar een reset nog steeds ingelogd willen blijven
-
+    @JsonIgnore
     @GetMapping(value = "/600/user/{username}")
     public ResponseEntity<Object> getUser(@PathVariable("username")String username){
 
