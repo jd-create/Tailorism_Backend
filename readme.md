@@ -43,6 +43,7 @@ HTTP 401 Unauthorized
 ```
 
 ### Rest endpoints.
+Voor een vollledige lijst ![lijst van rest endpoints](Lijst%20van%20rest%20endpoints%20voor%20de%20backend.pdf) 
 De back-end is op de volgende end-points te bereiken:
  1. `/api/auth/signup`
     * Hier kun je de volgende JSON sturen om een gebruiker aan te maken, rol is customerDetails.
